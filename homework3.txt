@@ -1,0 +1,20 @@
+print_month () {
+    year=$(date +'%Y')
+    echo Please enter a month:
+    read month
+    if [[ $month -gt 0 && $month -lt 13 ]]
+    then
+        cal $month $((year-1))
+        echo
+        cal $month $year
+        echo
+        cal $month $((year+1))
+        echo -------------
+        print_month
+    else
+        echo You have to enter a number from 1 to 12.
+        print_month
+    fi
+}
+print_month 
+

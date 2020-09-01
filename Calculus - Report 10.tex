@@ -1,0 +1,91 @@
+\input{_header2 - mathcharter.tex}
+
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 10}
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{10}
+
+\headrule
+\header{{\myname}}%
+{\emph{\myclass}}%
+{\textbf{\myhwtype }}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }} \\
+  {\myname{} } \\
+  \today
+\end{center}
+\begin{numedquestion}
+    \begin{enumerate}[label = {(\arabic*)}]
+        \item 
+        \begin{flalign*}
+            \int e^{\sqrt{x}} d x &= \int 2 \sqrt{x} e^{\sqrt{x}} d(\sqrt{x}) \\
+            \text {Set } \sqrt{x} &= t, \text{ then}: \\
+            \int e^{\sqrt{x}} d x &= \int 2 t e^t d t \\
+            &= 2 t e^t - 2 \int e^t dt\\
+            &= 2t e^t - 2 e^t \\
+            &= 2 e^{\sqrt{x}} (\sqrt{x}  - 1)
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int \frac{1}{\sqrt{\sqrt{x}+1}} d x & \text{, set } u = \sqrt{x} +1. \\       
+            \text{Then } x = u^2 - 2u + 1 & \text{, and } d x = 2( u - 1) d u \text{. We have:} \\
+            \int \frac{1}{\sqrt{\sqrt{x}+1}} d x &= 2 \int \frac{1}{\sqrt{u}} (u - 1) d u \\
+            &= 2 \int u^{1/2} du - 2 \int u^{-1/2} du \\
+            &= \frac{4}{3} u^{3/2} - 4 u^{1/2} \\
+            &= \frac{4}{3} (\sqrt{x} - 2) (\sqrt{x} + 1)^{1/2} + C
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int \sqrt{1-x^{2}} d x, & \text{ set } x = \sin \theta.\\
+            \text{Then } \sqrt{1 - x^2} = \cos \theta, & \text{and } dx = \cos \theta d \theta. \text{ We have:}\\
+            \int \sqrt{1-x^{2}} d x &= \int (\cos \theta)^2 d \theta \\
+            &= \int \frac{\cos (2 \theta) + 1}{2} d \theta = \frac{\sin {2 \theta}}{4} + \frac{\theta}{2} + C\\
+            &= \frac{1}{2} \left( x \sqrt{1- x^2} + \arcsin x \right) + C
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int x(\ln x)^{2} d x &= \int (\ln x) (x\ln x dx), \text{set } u = \ln x \text{ and } dv =  (x\ln x dx) \\
+            \text{We will find } v: v &= \int x \ln x d x \\
+            &= \frac{x^2}{2} \ln x - \frac{1}{2} \int x d x \\
+            &= \frac{x^2}{2} \left(\ln x - \frac{1}{2}\right),\text{ therefore: }\\
+            \int x(\ln x)^{2} d x &= \ln x \left(\frac{x^2}{2} \left(\ln x - \frac{1}{2}\right)\right) - \int \frac{1}{x} \frac{x^2}{2}\left(\ln x - \frac{1}{2}\right) d x\\
+            & = \ln x \left(\frac{x^2}{2} \left(\ln x - \frac{1}{2}\right)\right) - \int \frac{x}{2}\left(\ln x - \frac{1}{2}\right) d x \\
+            &= \frac{x^2}{2} (\ln x)^2 - \frac{x^2}{4}\ln x - \frac{1}{2} \frac{x^2}{2} \left(\ln x - \frac{1}{2}\right) + C\\
+            &= \frac{x^2}{2} (\ln x)^2 - \frac{x^2}{2}\ln x - \frac{x^2}{4} + C
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \text{We will prove} & \text{ a general reduction formula:}\\
+            \int \sec ^{n} x d x &= \frac{\sec ^{n-2} x \tan x}{n-1}+\frac{n-2}{n-1} \int \sec ^{n-2} x d x, n \neq 1. \text{ We have:} \\
+            \int \sec ^{n} x d x &= \int \sec ^{n-2} (\tan^2 x + 1) d x = \int \sec^{n-2} x + \int \tan x \sec^{n-3} d (\sec x) \\
+            &= \int \sec^{n-2} x + \frac{\sec^{n-2} x \tan x}{n-2} - \frac{1}{n-2} \int \sec^{n-2} \sec^2 x d x. \text{ Therefore: }\\
+            \int \sec ^{n} x d x &= \frac{\sec ^{n-2} x \tan x}{n-1}+\frac{n-2}{n-1} \int \sec ^{n-2} x d x. \text{ Thus, we have:} \\
+            \int \sec ^{3} x d x &= \frac{\sec x \tan x}{2} + \frac{1}{2} \int \sec x dx = \frac{1}{2}\sec x \tan x + \frac{1}{2}\ln |\tan x + \sec x| \\
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int \frac{1}{\sqrt{x^{2}-1}} d x, &\text{ set } x = \sec \theta. \text{ So } d x = \tan \theta \sec \theta d \theta, \text{ we have: } \\
+            \int \frac{1}{\sqrt{x^{2}-1}} d x &= \int \frac{1}{\sqrt{(\sec \theta)^2 -1}} \tan \theta \sec \theta d \theta \\
+            &= \int \sec \theta d \theta = \ln \left|\tan \theta + \sec \theta \right| + C \\
+            &= \ln |\sqrt{x^2 -1} + x| + C
+        && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int \left(\sqrt{x^{2}+1}\right) d x, &\text{ set } x = \tan \theta. \text{ So } d x =  (\sec \theta)^2 d \theta, \text{ we have: } \\  
+            \int \left(\sqrt{x^{2}+1}\right) d x &= \int \sqrt{(\tan \theta)^2 + 1} \sec ^2 \theta  d\theta \\
+            &= \int \sec^3 \theta d \theta \\
+            &= \frac{1}{2}\sec \theta \tan \theta + \frac{1}{2}\ln |\tan \theta + \sec \theta| \text{ from (5)}   \\ 
+            &= \frac{1}{2}x \sqrt{x^2 +1} + \frac{1}{2}\ln |x + \sqrt{x^2+1}|  
+            && \end{flalign*}
+        \item
+        \begin{flalign*}
+            \int \frac{2 x^{2}+x+1}{(x+3)(x-1)^{2}} d x &= \int \left(\frac{1}{(x-1)^2} + \frac{1}{x - 1} + \frac{1}{x+3}\right) dx \\
+            &= \frac{-1}{x-1} + \ln (x-1) + \ln (x+3)
+        && \end{flalign*}
+    \end{enumerate}
+\end{numedquestion}
+\end{document}

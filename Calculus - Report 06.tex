@@ -1,0 +1,225 @@
+\input{_header2 - mathcharter}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 06}
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{6}
+\headrule
+\header{{\myname}}%
+{\emph{\myclass}}%
+{\textbf{\myhwtype }}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }} \\
+  {\myname{} } \\
+  \today
+\end{center}
+
+\begin{numedquestion}
+\begin{proof}
+
+  To prove that $f(x) = x^2$ is continuous at every point of $\R$ we will prove that $f(x)$ is continuous at an arbitrary point of c. \newline
+  Choose an arbitrary $\varepsilon$, we will show that $|f(x) - f(c)| < \varepsilon$ whenever $|x-c| < \sqrt{\varepsilon + c^2} - |c|$.\newline
+  We have: 
+\begin{align*}
+  |x^2 - c^2| = |x-c||x+c| &\leq |x-c|\left(|x-c| + |2c|\right) \\
+  &< \left(\sqrt{\varepsilon + c^2} - |c|)\right)\left(\sqrt{\varepsilon + c^2} + |c|\right) \\
+  &=\varepsilon + c^2 - c^2 = 0
+\end{align*}
+  
+\end{proof}
+\end{numedquestion}
+  
+\begin{numedquestion}
+\begin{enumerate}[label={(\arabic*)}]
+    \setcounter{enumi}{0}
+
+    \item  \[f(x) = \lim_{x \rightarrow \infty} \frac{x^n}{1 + x^n}\]
+    We will inspect $f(x)$ with x at some interval of value. 
+    \begin{itemize}
+      \item $x >1$: $f(x) = \lim_{n\rightarrow \infty} \frac{x^n}{1 +x^n} = 1 - \lim_{x\rightarrow\infty} \frac{1}{1+x^n} =1 -0 = 1$
+      \item $x = 1$: $f(x) = f(x) = \lim_{n\rightarrow \infty} \frac{x^n}{1 +x^n} = 1 - \lim_{x\rightarrow\infty} \frac{1}{1+x^n} =1 -0 = 1$
+      \item $-1 < x < 1$: $f(x) = f(x) = \lim_{n\rightarrow \infty} \frac{x^n}{1 +x^n} = 1 - \lim_{x\rightarrow\infty} \frac{1}{1+x^n} =1 -0 = 1$
+      \item $x = -1$: $f(x) = f(x) = \lim_{n\rightarrow \infty} \frac{x^n}{1 +x^n} = 1 - \lim_{x\rightarrow\infty} \frac{1}{1+x^n} =1 -0 = 1$. $f(x)$ is undefined at $x = - 1$ because $\frac{-1}{1+(-1)^n}$ is $\frac{1}{2}$ for n even and $\frac{-1}{1-1}$ for n odd. 
+      \item $x < -1$: $f(x) = f(x) = \lim_{n\rightarrow \infty} \frac{x^n}{1 +x^n} = 1 - \lim_{x\rightarrow\infty} \frac{1}{1+x^n} =1 -0 = 1$
+    
+    \end{itemize}
+    \item  The graph for $f(x)$. \newline
+    \begin{tikzpicture}
+      % [
+      % declare function={
+      %   func(\x)=  ;}]
+    \begin{axis}[
+      axis x line=middle, axis y line=middle,
+      ymin=-2, ymax=2, ytick={-1,-0.5,0.5,1}, ylabel=$y$,
+      xmin=-2, xmax=2, xtick={-1,...,1}, xlabel=$x$
+    ]
+    % \pgfplotsinvokeforeach{-2, 1, 2}{
+    %   \draw[dashed] ({rel axis cs: 0,0} -| {axis cs: #1, 0}) -- ({rel axis cs: 0,1} -| {axis cs: #1, 0});} , domain=-2:2
+    \addplot[domain=-2:-1,blue] {1};
+    \addplot[domain=-1:1,blue] {0};
+    \addplot[domain=1:2,blue] {1};
+    \draw[dotted] (axis cs:-1,1) -- (axis cs:-1,0);
+    \draw[dotted] (axis cs:1,1) -- (axis cs:1,0);
+    \draw[dotted] (axis cs:1,1/2) -- (axis cs:0,1/2);
+    \addplot[holdot] coordinates{(-1,1)(-1,0)(1,0)(1,1)};
+    \addplot[soldot] coordinates{(1,1/2)};
+    \end{axis}
+    \end{tikzpicture} 
+
+    \item Points where f(x) is not continuous: \{-1,1\} are the points where f(x) is not continuous. 
+\end{enumerate}
+\end{numedquestion}
+  
+\begin{numedquestion}
+  \begin{enumerate}[label={(\arabic*)}]
+    \item If $f+g$ is continuous then at least on of the functions $f$ and $g$ must be continuous. \newline \underline{False - Both of the two could be discontinuous. }
+    
+    \[f(x)=\left\{\begin{array}{l}
+      1  \text { for } x \geqslant 0 \\
+      0  \text { for } x < 0
+      \end{array}\right.\text{and }
+      g(x)=\left\{\begin{array}{l}
+        0 \text { for } x \geqslant 0 \\
+        1 \text { for } x < 0
+        \end{array}\right.\]
+      Here $f(x) + g(x)$ = 1 for every $x \in \R$ is continuous at $f(0) + g(0)$ but both $f(x)$ and $g(x)$ is not.
+      
+      \item If $f$ is continuous then $|f|$ is continuous. \underline{True}. \newline
+      $f$ continuous at point c then $\forall \varepsilon>0$ we could find
+      $\delta>0$ so that whenever $|x-c|<\delta$ then $|F(x)-f(c)|<\varepsilon$
+      But
+      \[
+      |f(x)|-| f(c) \leqslant f(x)-f(c) \quad\left(\text { triangle inequality })\right)
+      \]
+      \[
+      \Rightarrow \quad|| f(x)|-| f(c)||<\varepsilon
+      \]
+      We could conclude that $|f(x)|$ is also continuous at point c.
+
+      \item If $|f|$ is continuous then $f$ is continuous. \underline{False} \newline
+      $ \quad f(x)=\left\{\begin{array}{l}1 \text { for } x \geqslant 0 \\ -1 \text { for } x<0\end{array} \Rightarrow|f(x)|=1 \text { for } x \in \mathbb{R}\right.$
+      If $|f(x)|$ / is continuous at 0 but $f(x)$ is discontinuous at 0.
+      
+      \item If f is continuous then $f(f(x))$ us continous. \underline{True}. \newline
+            This follows Theorem 5.42. Because $f$ is continuous on $\R$, it is continuous at $x$ and $f(x)$. So $f(f(x))$ is continuous on $\R$.
+
+      \item If $f(f(x))$ is continuous on $\R$ then $f$ is continuous on $\R$. \underline{False}.
+
+            \[f(x) = \left\{\begin{array}{l l}
+              2 &\text{ for } x \geq 0 \\
+              1 &\text{ for } x < 0
+            \end{array}\right.\]
+            Then 
+            \[f(f(x)) = \left\{\begin{array}{l l}
+              2 &\text{ for } x \geq 0 \\
+              2 &\text{ for } x < 0
+            \end{array}\right.\]
+  \end{enumerate}
+  
+  
+\end{numedquestion}
+  
+\begin{numedquestion}
+  \emph{Generally speaking, a function is uniformly continuous on a set if there is a bound on its rate of change. Now for $x^p$ we could easily observe that for $p>1$ rate of change of $x^p$ will approach infinity as $p$ approaches infinity, and for $p<0$ rate of change of $x^p$ will approach infinity as $p$ approaches zero. $x^p$ would be uniformly continuous otherwise. We have three approaches to tackle the proof: sequence, $\varepsilon-\delta$, and Mean Value Theorem. It is clear that differentiation would be helpful as uniformly continuous is concerned with the rate of change of function. Actually, Mean Value Theorem would be quite easy to applied in all.}
+
+CASE 1: $p > 1$. We will use sequence in this case. Personally, sequence is the best approach in not-satisfied proof. We just need to choose a pair of strong enough sequences.  \newline
+Set $x_n = n $ and $y_n = n + \frac{1}{n^{p-\lfloor p \rfloor}}$ then $|y_n - x_n | \rightarrow 0$ as $n \rightarrow \infty$ as required. We have:
+% (Or in $\epsilon - \delta$ language, we choose $\frac{\delta}{2} = \frac{1}{x^{p-\lfloor p \rfloor}}$)
+
+\begin{align*}
+  |f(y_n) - f(x_n)| &= \left|\left(n+\frac{1}{n^{p-\lfloor p \rfloor}}\right)^p - n^p\right| = \left(n+\frac{1}{n^{p-\lfloor p \rfloor}}\right)^p - n^p \\
+  & = \left(n+\frac{1}{n^{p-\lfloor p \rfloor}}\right)^{\lfloor p \rfloor} \cdot\left(n+\frac{1}{n^{p-\lfloor p \rfloor}}\right)^{p-\lfloor p \rfloor}-n^{\lfloor p \rfloor} n^{p-\lfloor p \rfloor} \\
+  & \geq n^{p-\lfloor p \rfloor}\left(\left(n+\frac{1}{n^{p-\lfloor p \rfloor}}\right)^{\lfloor p \rfloor}-n^{\lfloor p \rfloor}\right) = A
+  % & =n^{p-L p 1}\left(\operatorname{lp} n^{l p+-2}+f(n)+n^{-L p 1}\right) \\
+  % & =\operatorname{Lp} 1 n^{p-2}+f(n)+n^{p-2 L p 1}=A
+\end{align*}
+
+If $1<p<2$ then $A = 1 > 0$. \newline
+If $p \geq 2$, it is clear that A would be bigger than 0. 
+
+CASE 2: $p=1$. Given $\varepsilon > 0$. $|f(y) - f(x)| = |y - x| < \varepsilon$ whenever $|y - x < \delta = \varepsilon$. So $p=1$ satisfies. 
+
+CASE 3: $0<p<1$. We will use the \emph{ Mean Value Theorem} in this case. Let $y \geq x > 0$, there would exist a $x_0$ such that $<0x_0<x$. We have:
+\[
+\begin{array}{c}
+\left|f\left(y\right)-f\left(x\right)\right|=p\left(x^{*}\right)^{p-1}\left|y-x\right| \leq p\left(x_{0}\right)^{p-1}\left|y-x\right|<\epsilon \\
+\text { whenever }\left|y-x\right|<\delta=\frac{x_{0}^{1-p}}{p} \epsilon
+\end{array}
+\]
+$x=0$ would satisfy as well because $x^p$ is continuous. 
+
+CASE 4: $p=0$: Trivially satisfies. 
+
+CASE 5: $p<0$: \emph{We could just use the sequences $\frac{1}{n}$ and $\frac{1}{n^2}$(or any two sequences with different negative power) to prove $x^p$ is not uniformly continuous. Nevertheless, I will attempt to use the $\varepsilon-\delta$ in this case. } 
+
+Suppose $x^p$ is uniformly continuous. Pick $\varepsilon=1$. 
+Then $\exists \delta >0$ so that $\forall x,y \in (0,\infty)$ with $|x-y| < \delta$, we have $|x^p - y^p| < \varepsilon =1$. We will try to reach a contradiction. \newline
+Pick $x \in (0,1)$ with $x < \delta$ and set $y=\frac{x}{2^{(-1/p)}}$. Then $|x-y|  < \delta $. We have:
+
+\begin{align*}
+  |x^p - y^p| & = \left|x^p - \left(\frac{x}{2^{(-1/p)}}\right)^p\right| \\
+  & = \left| x^{p}\left(1-2 \right)\right|\\
+  & =  x^{p} > 1 \quad \forall x \in (0,1) \quad  \text{and} \quad p<0.
+\end{align*}
+We have reached a contradiction.
+
+
+
+\end{numedquestion}
+
+
+
+
+
+% \begin{numedquestion}
+%   CASE $1: \alpha>1$
+%   Let $f(x)=x^{\alpha}$ for $x \in[0, \infty)$ and $\alpha>1 .$ We wish to determine whether $f$ is uniformly continuous on $[0, \infty)$
+%   From the mean value theorem, there exists a number $x^{*} \in\left(x, y\right)$ such that
+%   \[
+%   \left|f\left(y\right)-f\left(x\right)\right|=\left|f^{\prime}\left(x^{*}\right)\right|\left|y-x\right|=\alpha\left(x^{*}\right)^{\alpha-1}\left|y-x\right|
+%   \]
+%   For $\epsilon=\alpha / 2,$ choose any $\delta>0,$ however small. Then, for $x=1 / \delta^{1 /(\alpha-1)}$ and $y=\frac{1}{2} \delta+1 / \delta^{1 /(\alpha-1)},$ we see that
+%   \[
+%   \left|f\left(y\right)-f\left(x\right)\right|=\left|f^{\prime}\left(x^{*}\right)\right|\left|y-x\right|=\alpha\left(x^{*}\right)^{\alpha-1} \delta / 2 \geq \alpha / 2=\epsilon
+%   \]
+%   Therefore, $f(x)=x^{\alpha}$ fails to be uniformly continuous on $[0, \infty)$ when $\alpha>1$
+
+%   \[
+% \text { CASE } 2: \alpha<1 \text { and } x>x_{0}>0
+% \]
+% Then given any $\epsilon>0$
+% \[
+% \begin{array}{r}
+% \left|f\left(y\right)-f\left(x\right)\right|=\alpha\left(x^{*}\right)^{\alpha-1}\left|y-x\right| \leq \alpha\left(x_{0}\right)^{\alpha-1}\left|y-x\right|<\epsilon \\
+% \text { whenever }\left|y-x\right|<\delta=\frac{x_{0}^{1-\alpha}}{\alpha} \epsilon
+% \end{array}
+% \]
+% Therefore, $f$ is uniformly continuous for $x \in\left[x_{0}, \infty\right)$ for all $x_{0}>0$ and $\alpha<1$
+  
+% \end{numedquestion}
+
+\end{document}
+
+
+% https://math.stackexchange.com/questions/2052082/fx-x-alpha-uniformly-continuous-on-0-infty-using-mvt
+% https://www.youtube.com/watch?v=U-UmtZkCHwU&t=9s
+% https://math.stackexchange.com/questions/569928/sqrt-x-is-uniformly-continuous
+% Let $\epsilon>0 .$ Pick $\delta=\epsilon^{2} .$ Then for $|x-y|<\delta$ we have
+% \[
+% |\sqrt{x}-\sqrt{y}|^{2} \leq|\sqrt{x}-\sqrt{y}||\sqrt{x}+\sqrt{y}|=|x-y|<\epsilon^{2} \Longrightarrow|\sqrt{x}-\sqrt{y}|<\epsilon
+% \]
+
+% https://math.stackexchange.com/questions/135234/showing-fx-x4-is-not-uniformly-continuous?rq=1
+% To show that it is not uniformly continuous on the whole line, there are two usual (and similar) ways to do it:
+% 1. Show that for every $\delta>0$ there exist $x$ and $y$ such that $|x-y|<\delta$ and $|f(x)-f(y)|$ is greater than some positive constant (usually this is even arbitrarily large).
+% 2. Fix the $\varepsilon$ and show that for $|f(x)-f(y)|<\varepsilon$ we need $\delta=0$
+% First way:
+% Fix $\delta>0,$ set $y=x+\delta$ and check
+% \[
+% \lim _{x \rightarrow \infty}\left|x^{4}-(x+\delta)^{4}\right|=\lim _{x \rightarrow \infty} 4 x^{3} \delta+o\left(x^{3}\right)=+\infty
+% \]
+
+% on the other hand this means we increase the complexity of our brain by unterstanding it

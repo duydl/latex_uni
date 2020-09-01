@@ -1,0 +1,133 @@
+\input{_header1 - mathclassic}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 05}
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{5}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }} \\
+  {\myname{} } \\
+  \today
+\end{center}
+
+\begin{numedquestion}
+
+\textbf{Proof using the $\varepsilon - \delta$ definition of functional limit:}
+\begin{proof}
+Choose an arbitrary $x_0$, we will prove that for all $x \in V_{\delta}(x_0)$ different from $x_0$, it follows that $f(x) \in V_{\varepsilon}(L = 5 - 3x_0)$. \newline
+For all $\varepsilon > 0$, we could choose $\delta = \frac{1}{3} \varepsilon > 0$, then:
+\[0 < |x - x_0| < \delta \implies |f(x)  - L)| = |5 - 3x - 5 + x_0| = 3|x - x_0| < 3\delta = \varepsilon.\]
+Thus, $\lim _{x \rightarrow x_{0}}(5-3 x) = L$.
+\end{proof}
+\textbf{Proof using the sequential definition of functional limit:}
+\begin{proof}
+Consider an arbitrary sequence $(x_n)$ satisfying $x_n \neq x_0$ and $(x_n) \rightarrow x_0$. Then for all $\delta > 0$ there exists N such that $ n > N: |x_n - x_0| < \delta$
+Then for all \(\varepsilon = 3\delta > 0\), it follows that:
+\[ |f(x_n) - L| = |5 - 3x_n -5 + 3x_0|  = 3|x_n - x_0|< \varepsilon.\]
+Thus, $(f(x_n)) \rightarrow L$. We conclude that $\lim _{x \rightarrow x_{0}}(5-3 x) = L$.
+\end{proof}
+\end{numedquestion}
+
+\begin{numedquestion}
+
+\textbf{Following is an equivalent definition for infinite limit using the sequential approach:} 
+\begin{defi}
+  Given a function $f: A \rightarrow \R $ and a limit point c of A, the following two statements are equivalent: 
+  \begin{itemize}
+    \item For all sequences $(x_n) \in A$ satisfying $x_n > x_0$ and $(x_n) \rightarrow c$, it follows that $f(x_n) \rightarrow \infty$.
+    \item $\lim_{x \rightarrow x_0^+}f(x) = \infty$.
+  \end{itemize} 
+\end{defi} 
+
+
+\begin{proof} 
+$(\rightarrow) $: Let's first assume that the $\delta - \varepsilon$ definition is satisfied and $\lim_{x\rightarrow x_0}{f(x)} = \infty$. For every L, there exists a neighborhood of c so that for every x in that neighborhood and greater than c, $f(x) > L$. 
+
+Consider an arbitrary sequence $(x_n)$, which converges to $x_0$ and satisfied $x_n \neq c$.  Choose and arbitrary $L > 0$, then there exists $V_{\delta}(x_0)$ that for all $x \in V_{\delta}(x_0)$ greater than c, $f(x) > L$. But because $(x_n)$ converges to $x_0$, there exists N that $(x_n)$ will eventually be in that neighborhood after $n \geq N$. It follows that $n \geq N$ implies $f(x_n) > L$. We have proved the forward implication. \newline
+
+
+\hspace{0.25in}$(\leftarrow)$: We will argue by contradiction. Assume that our sequential definition is true and $\delta - \varepsilon$ definition is false. 
+
+Therefore, there must exist at least one L for which no suitable $V_{\delta}(x_0)$. In other words, no matter what $\delta > 0 $ we try, there will always be at least one point: 
+\[ x \in V_{\delta}(x_0) \text  {    with    } x > x_0 \text{    for which    } f(x) \leq L.\]
+Let $\delta = \frac{1}{n}$, then in all of those n neighborhoods $V_{\delta}(x_0)$, we could find an x such that $f(x) \leq L$. But these x's make a sequence that converges to c, where the image sequence of it: $f(x_n) \leq L$. We have reached the contradiction. Thus, the backward implication is satisfied.
+\end{proof}
+\end{numedquestion}
+
+\begin{numedquestion}
+
+\begin{proof} 
+Because $\lim_{x \rightarrow x_0}f(x) = -1$, there exists a \(c>0\) such that
+\[
+|f(x)-(-1)|< \frac{1}{2}
+\]
+whenever \(x\) is a point in domain of $f$ differing from \(x_{0}\) and satisfying \(\left|x-x_{0}\right|<c .\) Thus,
+\[
+f(x) - (-1) \leq |f(x)- (-1)| < \frac{1}{2} \implies f(x) < -\frac{1}{2}
+\]
+for all \(x\) in \(\left(x_{0}-c, x_{0}+c\right), x \neq x_0\) that are in the domain of \(f .\) This would complete the proof.
+\end{proof}
+
+\end{numedquestion}
+
+
+\begin{numedquestion}
+  
+\begin{enumerate}[label = {(\arabic*)}]
+    \item \(\lim_{x \rightarrow+\infty}\left(6^{x}-2^{x}\right) = \lim_{x \rightarrow+\infty}\left(2^{x})(3^x-1\right) = \lim_{x \rightarrow+\infty}(2^{x})\lim_{x \rightarrow+\infty}(3^x-1) = \infty\). 
+    Proving $\lim_{x \rightarrow \infty} C^x = \infty$ where $C > 1$: For all $N >0$, there exists $n = \log_C (N+1)$ that whenever $x > n$, $C^x = N + 1 > N$.       
+    
+    \item \(\lim _{x \rightarrow 0+} C^{x} = C^0 = 1\) for \(C>0\). Using the theorem that the exponential function $C^x$ which $C>0$ is continuous at every x.
+    
+    \item 
+    \begin{align*}
+      &\lim _{x \rightarrow+\infty} x^2(\frac{1}{x^3} \sin \frac{1}{x}-\cos \frac{1}{x}) \\
+      = &\lim _{x \rightarrow+\infty} (\frac{1}{x} \sin \frac{1}{x}-x^2\cos \frac{1}{x}) \\
+      = &\lim _{x \rightarrow+\infty} (\frac{1}{x} \sin \frac{1}{x})- \lim _{x \rightarrow+\infty}(x^2) \lim _{x \rightarrow+\infty}(\cos \frac{1}{x}) = -\infty  
+    \end{align*} 
+    Using squeeze theorem on the $\lim _{x \rightarrow+\infty} (\frac{1}{x} \sin \frac{1}{x})$, we found its limit is equal to zero. $\lim _{x \rightarrow+\infty}(x^2) = \infty$ and $\lim _{x \rightarrow+\infty}\cos \frac{1}{x} = 1$.
+\end{enumerate}
+\end{numedquestion}
+
+
+
+% \hrule
+% \bigskip
+% \noindent{\textbf{The following definitions was used.}} 
+% \begin{defi}
+%   Let \(f: E \rightarrow \mathbb{R}\) be a function with domain \(E\) and suppose that \(x_{0}\) is a point of accumulation of \(E .\) Then we write
+%   \[
+%   \lim _{x \rightarrow x_{0}} f(x)=L
+%   \]
+%   if for every \(\varepsilon>0\) there is a \(\delta>0\) so that
+%   \[
+%   |f(x)-L|<\varepsilon
+%   \]
+%   whenever \(x\) is a point of \(E\) differing from \(x_{0}\) and satisfying \(\left|x-x_{0}\right|<\delta\)
+%   \end{defi} 
+%   \begin{defi}
+%   Let \(f: E \rightarrow \mathbb{R}\) be a function with domain \(E\) and suppose that \(x_{0}\) is a point of accumulation of \(E .\) Then we write
+%   \[
+%   \lim _{x \rightarrow x_{0}} f(x)=L
+%   \]
+%   if for every sequence \(\left\{e_{n}\right\}\) of points of \(E\) with \(e_{n} \neq x_{0}\) and \(e_{n} \rightarrow x_{0}\) as \(n \rightarrow \infty\)
+%   \[
+%   \lim _{n \rightarrow \infty} f\left(e_{n}\right)=L
+%   \]
+%   \end{defi} 
+
+%   \begin{defi}[Infinite Limit]
+%   Let \(f: E \rightarrow \mathbb{R}\) be a function with domain \(E\) and suppose that \(x_{0}\) is a point of accumulation of \(E \cap\left(x_{0}, \infty\right) .\) Then we write
+%   \[
+%   \lim _{x \rightarrow x_{0}+} f(x)=\infty
+%   \]
+%   if for every \(M>0\) there is a \(\delta>0\) so that \(f(x) \geq M\) whenever
+%   \[
+%   x_{0}<x<x_{0}+\delta \text { and } x \in E
+%   \]
+%   \end{defi}
+\end{document}

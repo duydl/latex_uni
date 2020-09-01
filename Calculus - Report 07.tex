@@ -1,0 +1,145 @@
+\input{_header2 - mathcharter}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 07}
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{7}
+\headrule
+\header{{\myname}}%
+{\emph{\myclass}}%
+{\textbf{\myhwtype }}
+\DeclareMathOperator{\arcsec}{arcsec}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }} \\
+  {\myname{} } \\
+  \today
+\end{center}
+
+\begin{numedquestion}
+  
+\begin{enumerate}[label={(\arabic*)}]
+    \setcounter{enumi}{0}
+  \item 
+  \begin{align*}
+  f'(x) &= (xe^{-x})\cos(xe^{-x}) \\
+  &= (e^{-x} - xe^{-x})\cos(xe^{-x})
+  \end{align*}
+  \item 
+  \begin{align*}
+  f'(x) &= 4(x^2 + \cos^3 x)'(x^2 + \cos^3 x)^3 \\
+  &= 4(2x - \sin x \cos^2 x)(x^2 + \cos^3 x)^3
+  \end{align*}
+  \item 
+  \begin{align*}
+  f'(x) &= \frac{-2x \sin(x^2)\sin^2(x)}{(1 + x^2)^2} + \frac{2x \cos(x^2)\sin^2(x)}{(1 + x^2)} + \frac{ 2\sin(x^2)\sin(x)\cos x}{(1 + x^2)} \\
+  &= 2 \sin x\left(-\frac{x \sin(x^2)\sin x }{(1 + x^2)^2} + \frac{x \cos(x^2)\sin x}{(1 + x^2)} + \frac{ \sin(x^2)\cos x}{(1 + x^2)}\right)
+  \end{align*}
+\end{enumerate}
+\end{numedquestion}
+
+\begin{numedquestion}
+    \begin{enumerate}[label = {(\arabic*)}]
+    % setcounter{enumi}{0}
+    \item  
+    \begin{align*}
+      f'(x) &= \lim_{x \rightarrow 0} \frac{x\sqrt{|x|} - 0\sqrt{|0|}}{x - 0} \\
+      &= \lim_{x \rightarrow 0}\sqrt{|x|} = 0
+    \end{align*}
+    \item \begin{align*}
+      f'(x) &= \lim_ {x \rightarrow 0} \frac{x\cos \frac{1}{x} - 0}{x - 0} \\
+      &= \lim_ {x \rightarrow 0} \cos \frac{1}{x}
+    \end{align*}
+    which does not exist. This could be proved using the two sequences $a_{n}=\frac{1}{2 n \pi} \text { and } b_{n}=\frac{1}{(2 n+1) \pi}$.
+    \item \begin{align*}
+      f'(x) &= \lim_ {x^3 \rightarrow 0} \frac{x\cos \frac{1}{x} - 0}{x - 0} \\
+      &= \lim_ {x \rightarrow 0} x^2 \cos \frac{1}{x} = 0 \text { using Squeeze Theorem}
+    \end{align*}
+   
+  \end{enumerate}
+\end{numedquestion}
+  
+\begin{numedquestion}
+  The $\sec x$ function has no inverse. To determine the domain of $\arcsec (x)$, we first have to select a restricted domain for $\sec x$, that is creating a new function $\sec x$ with domain  $[0, \pi]$. Then the domain of $\arcsec(x)$ is $(-\infty, -1] \cup [1, \infty)$. 
+  The graph for $\arcsec(x)$:\\
+\begin{tikzpicture}
+  \begin{axis}[axis x line=middle, axis y line=middle, samples = 500,
+    xmin=-6 - 1/2, xmax=6 + 1/2, xlabel=$x$,
+    ymin=-100, ymax=210, ytick={-90, 90, 180}, ylabel=$y$,
+    x post scale= 2
+    ]
+    \addplot[domain = -5:-1, color = red] {acos(1/x)};
+    \addplot[domain = 1:5, color = red]   {acos(1/x)};
+    \draw[dotted] (axis cs:-6,90) -- (axis cs:6,90);
+  \end{axis}
+\end{tikzpicture}
+
+    \begin{align*}
+      y = \arcsec x &\implies  \sec y = x \\
+      & \implies \frac{d x}{d t} = \sec y \tan y \\
+      & \implies \frac{d y}{d x} = \frac{1}{\sec y \tan y} = \frac{1}{x \tan y}\text{ as } \tan y = \pm \sqrt{1 - x^2} \text{ we will square the equation. }\\
+      & \implies \left(\frac{d y}{d x} \right)^2 = \left(\frac{1}{(\sec y \tan y)^2}\right) = \left(\frac{1}{x^2 (x^2 - 1)}\right)\\
+      & \implies \left|\frac{d y}{d x} \right| = \left(\frac{1}{|x| \sqrt{x^2 - 1}}\right)\\
+    \end{align*}
+    Since $\frac{d y}{d x} = \frac{1}{\sec y \tan y} = \frac{\cos^2 y}{\sin y}$, $\frac{d y}{d x}$ will have the same sign as $\sin y$, which is always positive. We conclude that:
+\[\frac{d(\arcsec x)}{d x} = \frac{1}{|x| \sqrt{x^2 - 1}} = \left\{\begin{array}{l}
+  \frac{1}{x \sqrt{x^2 - 1}}  \text { for } x \geq 1 \\
+  \frac{-1}{x \sqrt{x^2 - 1}} \text { for } x \leq -1 \end{array}\right.\]
+\end{numedquestion}
+
+\begin{numedquestion}
+  We have $p^{(k)}(x) = a_k k! + a_{k+1} \frac{(k+1)!}{1!} x + \dots + a_n \frac{n!}{(n-k)!}x^{n-k}$ \newline
+  Therefore $p^{(k)}(0) = a_k k!$.
+\end{numedquestion}
+
+
+% \begin{numedquestion}
+%   CASE $1: \alpha>1$
+%   Let $f(x)=x^{\alpha}$ for $x \in[0, \infty)$ and $\alpha>1 .$ We wish to determine whether $f$ is uniformly continuous on $[0, \infty)$
+%   From the mean value theorem, there exists a number $x^{*} \in\left(x, y\right)$ such that
+%   \[
+%   \left|f\left(y\right)-f\left(x\right)\right|=\left|f^{\prime}\left(x^{*}\right)\right|\left|y-x\right|=\alpha\left(x^{*}\right)^{\alpha-1}\left|y-x\right|
+%   \]
+%   For $\epsilon=\alpha / 2,$ choose any $\delta>0,$ however small. Then, for $x=1 / \delta^{1 /(\alpha-1)}$ and $y=\frac{1}{2} \delta+1 / \delta^{1 /(\alpha-1)},$ we see that
+%   \[
+%   \left|f\left(y\right)-f\left(x\right)\right|=\left|f^{\prime}\left(x^{*}\right)\right|\left|y-x\right|=\alpha\left(x^{*}\right)^{\alpha-1} \delta / 2 \geq \alpha / 2=\epsilon
+%   \]
+%   Therefore, $f(x)=x^{\alpha}$ fails to be uniformly continuous on $[0, \infty)$ when $\alpha>1$
+
+%   \[
+% \text { CASE } 2: \alpha<1 \text { and } x>x_{0}>0
+% \]
+% Then given any $\epsilon>0$
+% \[
+% \begin{array}{r}
+% \left|f\left(y\right)-f\left(x\right)\right|=\alpha\left(x^{*}\right)^{\alpha-1}\left|y-x\right| \leq \alpha\left(x_{0}\right)^{\alpha-1}\left|y-x\right|<\epsilon \\
+% \text { whenever }\left|y-x\right|<\delta=\frac{x_{0}^{1-\alpha}}{\alpha} \epsilon
+% \end{array}
+% \]
+% Therefore, $f$ is uniformly continuous for $x \in\left[x_{0}, \infty\right)$ for all $x_{0}>0$ and $\alpha<1$
+  
+% \end{numedquestion}
+
+\end{document}
+
+
+% https://math.stackexchange.com/questions/2052082/fx-x-alpha-uniformly-continuous-on-0-infty-using-mvt
+% https://www.youtube.com/watch?v=U-UmtZkCHwU&t=9s
+% https://math.stackexchange.com/questions/569928/sqrt-x-is-uniformly-continuous
+% Let $\epsilon>0 .$ Pick $\delta=\epsilon^{2} .$ Then for $|x-y|<\delta$ we have
+% \[
+% |\sqrt{x}-\sqrt{y}|^{2} \leq|\sqrt{x}-\sqrt{y}||\sqrt{x}+\sqrt{y}|=|x-y|<\epsilon^{2} \Longrightarrow|\sqrt{x}-\sqrt{y}|<\epsilon
+% \]
+
+% https://math.stackexchange.com/questions/135234/showing-fx-x4-is-not-uniformly-continuous?rq=1
+% To show that it is not uniformly continuous on the whole line, there are two usual (and similar) ways to do it:
+% 1. Show that for every $\delta>0$ there exist $x$ and $y$ such that $|x-y|<\delta$ and $|f(x)-f(y)|$ is greater than some positive constant (usually this is even arbitrarily large).
+% 2. Fix the $\varepsilon$ and show that for $|f(x)-f(y)|<\varepsilon$ we need $\delta=0$
+% First way:
+% Fix $\delta>0,$ set $y=x+\delta$ and check
+% \[
+% \lim _{x \rightarrow \infty}\left|x^{4}-(x+\delta)^{4}\right|=\lim _{x \rightarrow \infty} 4 x^{3} \delta+o\left(x^{3}\right)=+\infty
+% \]
+
+% on the other hand this means we increase the complexity of our brain by unterstanding it

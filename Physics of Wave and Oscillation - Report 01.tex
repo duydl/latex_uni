@@ -1,0 +1,42 @@
+\documentclass[11pt]{exam}
+\newcommand{\myclass}{Physics of Wave and Oscillation}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 01}
+% Prefix for numedquestion's
+
+\input{_header}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \textbf{\myclass{} - \myhwtype{} }}\\
+  \vspace{0.6em} {\myname{} (\small{ID: \mystudentid{}})} \\
+  \today
+\end{center}
+
+
+\textbf{Prove Euler's formula on a complex plane}
+\vspace{0.3em} \hrule \vspace{.1in}
+
+Euler's formula states that for any real number \(x\) :
+\[
+e^{i x}=\cos x+i \sin x
+\]
+where \(e\) is the base of the natural logarithm, \(i\) is the imaginary unit, with \(x\) given in radians. \newline
+As all complex numbers can be expressed in polar coordinates, there exist some \(r\) and \(\theta\) depending on \(x\) such that:
+\[
+e^{i x}=r(\cos \theta+i \sin \theta)
+\]
+From any of the definitions of the exponential function we know that the derivative of \(e^{i x}\) is \(i e^{i x}\). Therefore,
+differentiating both sides gives:
+\[
+i e^{i x}=(\cos \theta+i \sin \theta) \frac{d r}{d x}+r(-\sin \theta+i \cos \theta) \frac{d \theta}{d x}
+\]
+\[
+\iff i r(\cos \theta+i \sin \theta)=(\cos \theta+i \sin \theta) \frac{d r}{d x}+r(-\sin \theta+i \cos \theta) \frac{d \theta}{d x}
+\]
+As real and imaginary parts on two sides are equal each other respectively, we have \(\frac{d r}{d x}=0\) and \(\frac{d \theta}{d x}=1 .\) Thus, \(r\) is a constant, and \(\theta\) is \(x+C\) where \(C\) is a constant. Let x = 0, we have \(r(0)=1\) and therefore \(\sin C = 0\) and \(r\cos C = 1\), giving \(r=1\) and \(\theta=x .\) We have proved the formula:
+\[
+e^{i x}=1(\cos x+i \sin x)=\cos x+i \sin x
+\]
+\end{document}

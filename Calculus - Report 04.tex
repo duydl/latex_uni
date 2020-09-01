@@ -1,0 +1,102 @@
+\input{_header1 - mathclassic}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 04}
+\newcommand{\mystudentid}{1026-32-2038}
+
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \textbf{\myclass{} - \myhwtype{} }}\\
+  \vspace{0.6em} {\myname{} (\small{ID: \mystudentid{}})} \\
+  \today
+\end{center}
+
+\noindent{\textbf{Problem 4.1}} \newline
+
+We will use the following definition for this exercise:
+\begin{defi}[Limit of a Sequence] Let \(\left\{s_{n}\right\}\) be a sequence of real numbers. We say that \(\left\{s_{n}\right\}\) converges to a number \(L\) and write
+\[
+\lim _{n \rightarrow \infty} s_{n}=L
+\]
+provided that for every number \(\varepsilon>0\) there is an integer \(N\) so that
+\[
+\left|s_{n}-L\right|<\varepsilon
+\]
+whenever \(n \geq N\)
+\end{defi}
+\begin{proof}
+\[\lim _{n \rightarrow \infty} x_{2 n}=\lim _{n \rightarrow \infty} x_{2 n+1}=L\] Thus, for any \(\epsilon>0\), there exists \(n_{0}, n_{1} \in \N\) such that: 
+\begin{itemize}
+    \item \(|a_{2 n}-L|<\epsilon\) whenever \(n \geq n_{0}\)
+    \item \(|a_{2 n+1}-L|<\epsilon\) whenever \(n \geq n_{1}\)
+\end{itemize} 
+Let \(m=\max \left\{2 n_{0}, 2 n_{1}+1\right\},\) then \(\left|a_{n}-L\right|<\epsilon\) whenever \(n \geq m\). We could conclude that \[ \lim_{n \rightarrow \infty}x_n=L.\]
+\end{proof}
+
+\noindent{\textbf{Problem 4.2}} \newline
+
+We will use the following definitions for this exercise:
+\begin{defi}[Boundary, Interior, Isolated, and Accumulation Points] Let \(\mathrm{S}\) be an arbitrary set in \(\R\). 
+    \begin{enumerate}
+        \item A point b \(\in \R\) is called boundary point of \(S\) if every non-empty neighborhood of b intersects \(\mathrm{S}\) and the complement of \(\mathrm{S}\). 
+        \item A point \(s \in S\) is called interior point of \(\mathrm{S}\) if there exists a neighborhood of \(\mathrm{S}\) completely contained in \(\mathrm{S}\). 
+        \item A point \(t \in S\) is called isolated point of \(S\) if there exists a neighborhood U of such that \(U \cap S=\{t\}\)
+        \item A point \(r \in \R\) is called accumulation point, if every neighborhood of \(r\) contains infinitely many distinct points of \(\mathrm{S}\)
+    \end{enumerate}
+\end{defi}
+
+\begin{enumerate}[label={(\arabic*)}]
+    \item  \(\left\{0, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \dots\right\}\) \newline \newline
+    The members of this set is the sequence \(a_n = \frac{n-1}{n}\).
+    \begin{itemize}
+        \item The set of boundary points is the set \(\left\{0, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \dots\right\}\) \(\cup\) \(\{1\}\). Every points in the set is a boundary points because any neighborhood of those point contains itself and some irrational points. The point 1 is also a boundary points because for every neighborhood \(V_{\epsilon}(1)\), we could find an N such that for every \(n > N\), the points \(a_n = \frac{n-1}{n}\) in the set will belong in the neighborhood, and the neighborhood also contains points not in the set. 
+        \item The set of interior points is empty. Because if we take any point in that set, then any neighborhood of that point will contain at least one irrational point that is not part of the set. 
+        \item The set of isolated points is the set \(\left\{0, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \dots\right\}\) itself. It is easy to find a small enough neighborhood for any point of the form \(a_n = \frac{n-1}{n}\) that does not contain any point from the set but only that point from the set. 
+        \item The set of accumulated points is \(\{1\}\). It is clear that no point of the form \(a_n = \frac{n-1}{n}\) is an accumulation point. On the other hand, for every neighborhood \(V_{\epsilon}(1)\), we could find an N such that for every \(n > N\), the points \(a_n = \frac{n-1}{n}\) will in in that neighborhood. 
+    \end{itemize}
+    
+    
+    \item  \(\{x \in \mathbb{R}: x^{2}<3\}\)
+    \begin{itemize}
+        \item The set of boundary points is the set consisting of the two elements \(\{\sqrt{3}, -\sqrt{3}\}\). Every neighborhood of these two points contains points both from the interval \((\sqrt{3}, -\sqrt{3})\) and from the complement of that interval. 
+        \item The set of interior points is the set \((-\sqrt{3}, \sqrt{3})\) itself. 
+        \item The set of isolated points is empty.
+        \item The accumulated points is the set \([-\sqrt{3}, \sqrt{3}]\)
+    \end{itemize}
+    
+    
+    \item  \(\R \backslash \Z\)
+    \begin{itemize}
+        \item The set of boundary points is the integer set \(\Z\).
+        \item The set if interior points is the set \(\R \backslash \Z\) itself.
+        \item The set of isolated points is empty.
+        \item The set of accumulated points is the real number set \(\R\).
+    \end{itemize}
+\end{enumerate}
+
+
+\noindent{\textbf{Problem 4.3}} \newline
+
+We will use the following definition for this exercise:
+\begin{defi}[Open Set] A set \(O \subseteq \R\) is open if for all points \(a \in O\) there exists an \(\epsilon\) -neighborhood \(V_{\epsilon} \subseteq O\)
+\end{defi}
+\begin{proof}
+Let \(S_1, S_2, \dots, S_n\) be a collection of open sets, and let \(U = \bigcup_{i=1}^{n} S_i\). Take an arbitrary  \(a\) in U, then \(a\) must be contained in one specific \(S_i\). Since every \(S_i\) is open, there exists a neighborhood of \(a\) contained in that specific \(S_i\). But then that neighborhood must also be contained in \(U\). Thus, any \(a\) in \(U\) has a neighborhood that is also in \(U\), which means by definition \(U\) is open.
+\end{proof}
+
+\noindent{\textbf{Problem 4.4}}\newline
+
+We will use the following definition for this exercise:
+\begin{defi}[Closed Set] Let \(E\) be a set of real numbers. The set \(E\) is said to be closed provided that every accumulation point of \(E\) belongs to the set \(E\).
+\end{defi}
+\begin{proof}
+We will prove this using contradiction. Let \(\hat{S}\) be the set of accumulation points of set \(S\). Assume that \(\hat{S}\) is an open set, then there exist an accumulation point \(x_{0}\) of \(\hat{S}\) which does not belong to the set \(\hat{S}\). \newline
+Then given any \(\varepsilon>0\) there exists infinitely many \(x \in \hat{S} \cap V_{\frac{\varepsilon}{2}}(x_0)\), \(\left|x-x_{0}\right|<\frac{\varepsilon}{2}\). Similarly as \(x \in \hat{S} \) is an accumulation point of \(S\) so there exists infinitely many \(x^{\prime} \in S \cap V_{\frac{\varepsilon}{2}}(x)\), \(\left|x^{\prime}-x\right|<\frac{\varepsilon}{2}\). Now
+\[
+\left|x^{\prime}-x_{0}\right|=\left|x^{\prime}-x+x-x_{0}\right| \leq\left|x^{\prime}-x\right|+\left|x-x_{0}\right|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon 
+\]
+Thus given any \(\epsilon > 0\), there exists infinitely many  \(x^{\prime} \in S \cap V_{\varepsilon}(x_0)\). That means \(x_0\) is an accumulation point of \(S\) and by definition is contained in \(\hat{S}\). We have reach a contradiction. We could conclude \(\hat{S}\) contains all of its accumulation points and is a closed set.
+\end{proof}
+\end{document}

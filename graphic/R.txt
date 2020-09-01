@@ -1,0 +1,32 @@
+#	to	generate	the	seed	numbers
+x<-seq(0, 1, 0.01)
+
+#	to	get	the	value	for	P1	~	P7 (P2=P4=P6=0	in	this	example)
+P1	<- 8/pi^2*(sin(pi*x))
+P3	<- 8/pi^2*(-1/9*sin(3*pi*x))
+P5	<- 8/pi^2*(1/25*sin(5*pi*x))
+P7	<- 8/pi^2*(-1/49*sin(7*pi*x))
+
+#	to	plot	P1	(the	1st normal	mode)
+plot (P1,	xlab="L (1~100)" ,	ylim=c(-0.5,	1), ylab="a",	type="l")
+
+#	to	plot	the	base	line	and	initial	shape
+abline(h=0)
+lines(2*x, lwd=3)
+lines(2-2*x, lwd=3)
+
+#	How	was	it?	Do	you	think	we	get	the	triangle	shape?	
+#	Let’s	add	P2	and	P3	(P2=0)
+lines	(P3,	col=2) #	this	is	for	P3	only
+lines	(P1+P3,	col=2, lwd=2) #	this	is	for	P1+P2+P3
+
+#	How	was	the	shape?	Getting	closer?
+#	Let’s add	up	to	P5	
+lines	(P5,	col=3)
+lines	(P1+P3+P5,	col=3,	lwd=2)
+
+
+#	Did	you	check	the	graph?
+#	Let’s add	up	to	P7		
+lines	(P7,	col=4)
+lines	(P1+P3+P5+P7,	col=4,	lwd=2)

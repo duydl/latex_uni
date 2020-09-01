@@ -1,0 +1,28 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-3.0977861037304018,
+xmax=3.3941311871631914,
+ymin=-0.8592987399378631,
+ymax=3.844776768813481,
+xtick={-3,-2.5,...,3},
+ytick={-0.5,0,...,3.5},]
+\clip(-3.0977861037304018,-0.8592987399378631) rectangle (3.3941311871631914,3.844776768813481);
+\draw[line width=2pt,color=sexdts,smooth,samples=100,domain=-3.0977861037304018:3.3941311871631914] plot(\x,{(1-(\x)^(2))^(2)});
+\begin{scriptsize}
+\draw[color=sexdts] (-1.6176875791700116,3.81180427692971) node {$f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}

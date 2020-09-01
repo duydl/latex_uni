@@ -1,0 +1,16 @@
+{
+    "latex-workshop.view.pdf.viewer": "tab",
+    "ltex.ignoreRuleInSentence": [
+        {
+            "rule": "SENTENCE_WHITESPACE",
+            "sentence": "^\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+$"
+        },
+        {
+            "rule": "SENTENCE_WHITESPACE",
+            "sentence": "^\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+\\Q\\EDummy[0-9]+$"
+        }
+    ],
+    "latex-workshop.texcount.args": [
+        "TeXCount"
+    ]
+}

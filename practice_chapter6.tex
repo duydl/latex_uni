@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{textcomp} %<-- enables use of various symbols(you can find other symbols in  http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf)
+\title{Practice in Chapter 6} % with \maketitle, title is generated
+\author{Taro Kyodai} % with \maketitle, autthor is generated
+
+\begin{document}
+
+
+\maketitle % title, author, date of issue are generated. date of issue is automatically generated unless you define it.
+
+\tableofcontents % the command generate table of contents in the LaTeX document. to generate latest state, you may need to compile it more than two times.
+
+\section{6.2 Line breaking}
+
+Text\\ % Starts a new line withouy starting a new paragraph
+Text\newline % Same as \\
+Text\\* % additionally prohibitis a page break after the forced line break
+A new page starts\newpage %starts a new page
+
+\section{6.3 Special characters and symbols}
+
+``Please press the 'x' key.''
+
+''Please press the 'x' key.''
+
+"Please press the 'x' key."
+
+% Note that we need to pay attention to the direction of double quotations
+% Emacs will automatically replace the ''symbol for te correct quotation marks `` or '' as corresponds. you will experience one more advantage of using emacs.
+
+daughter-in-law, X-rated\\
+pages 13--67\\
+yes---or no? \\
+$0$, $1$, and $-1$ \\ %<-- to give a space between numbers, $ is necessary
+0,1 and -1
+%<-- An empty line starts a new line
+
+http://server/\~{}username/filename\\ 
+http://server/~username/filename\\ %<-- ~ is a special character. see 5.7
+http://server/$\sim$username/filename
+
+30 \textcelsius{} is 86 \textdegree{}F.
+
+Not like this ... but like this:\\
+New York, Tokyo, Budapest, \ldots
+% you will find slight differece of spasing in dots
+% \cdots similar with \ldots is used in next chapter
+
+\section{6.4 Footnotes}
+
+% footnote is required in the following homework.
+% please master how to use it
+
+Footnotes\footnote{This is a foot note.} are often used
+by people using \LaTeX. %<-- you can find it on footer of the page
+
+Footnotes\footnote{This is a foot note.} are often used
+by people using \LaTeX. %<-- you can find it on footer of the page
+
+
+\section{6.5 Emphasized words}
+
+This is an example of an \emph{emphasized text}.\\ %<-- emphasized example
+This is an example of a \underline{underlined text}.\\%<-- underline example
+
+\emph{If you use emphasizing inside a piece of emphasized text, then \LaTeX{} uses the \emph{normal} font for emphasizing.} %<-- \emph is contextual. effect of emphasized text can be deleted.
+
+\textbf{\textsl{boltface slanted text}} %<-- you can give double emphasized effect in this way.
+
+\section{6.6 Titles, Chapters, and Sections}
+
+\section{This is a section}
+\section*{This is another section}
+\subsection{This is a subsection}
+\subsubsection{This is a subsubsection}
+\paragraph{this is a paragraph}
+\subparagraph{this is a subparagraph}
+
+\section{Help} % numbered section appears on table of contents
+\section*{Help} % non-numbered section appears but not on table of contents
+
+\end{document}

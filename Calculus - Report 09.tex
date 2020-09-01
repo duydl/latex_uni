@@ -1,0 +1,63 @@
+\input{_header2 - mathcharter.tex}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 09}
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{9}
+
+\headrule
+\header{{\myname}}%
+{\emph{\myclass}}%
+{\textbf{\myhwtype }}
+\newtheorem*{prop}{Proposition}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }} \\
+  {\myname{} } \\
+  \today
+\end{center}
+
+\begin{numedquestion}
+    \begin{prop}
+        If $f$ is continuous on an interval $[a,b]$ and $\int^b_a f(x)g(x) = 0$ for every continuous function $g$ on $[a,b]$, then $f(x)=0$ on $[a,b]$.
+    \end{prop} 
+    We will use contradiction to prove the above proposition. Assume that there is a continuous function $f(x) \neq 0$ on $[a,b]$ such that $\int ^b _a f(x)g(x) = 0$ for every continuous function $g(x)$. Then for $g(x) = f(x)$ we have $\int ^b _a f(x)g(x)dx = \int ^b _a f(x)^2dx = 0$. But $\int ^b _a f(x)^2dx > 0$ for every continuous function $f(x)$ that is not identically equal zero on $[a,b]$. We have reached a contradiction, thus, the proposition must be true. 
+\end{numedquestion}  
+
+\begin{numedquestion}
+    \begin{enumerate}[label = {(\arabic*)}]
+        \item $\int^{\pi/4}_0 \sin(2x)\sin(3x)dx = \frac{1}{2}\int^{\pi/4}_0 (\cos x - \cos 5x)dx = \left[\frac{\sin x}{2} - \frac{\sin 5x}{10}\right] \Big|_0^{\pi/4} = \frac{1}{2} - \frac{1}{10}  = \frac{2}{5}$ 
+        \item $\int^{\pi/2}_0 \frac{\sin x dx}{2 + \cos x} = -\int^{\pi/2}_{0} \frac{d(\cos x)}{2 +\cos x} = -\ln (2+ \cos x) \Big|_0^{\pi/2}= \ln \frac{3}{2} $
+    \end{enumerate}
+\end{numedquestion}
+
+\begin{numedquestion}
+    \begin{thm}Let \(f\) be a continuous function on an interval \([a, b]\). Then
+    \[
+    \int_{a}^{b} f(x) d x=\lim _{n \rightarrow \infty} \frac{b-a}{n} \sum_{k=0}^{n-1} f\left(a+\frac{k}{n}(b-a)\right)
+    \]
+    \end{thm}
+    Using the theorem, we have:
+    \begin{align*}
+        &\lim _{n \rightarrow \infty} \frac{2^{1/n} + 2^{2/n} + \dots + 2^{n-1/n} + 2^{n/n}}{n} \\
+        =&\lim _{n \rightarrow \infty} \frac{2^{0/n} + 2^{2/n} + \dots + 2^{n-2/n} + 2^{n-1/n}}{n} \\
+        =& \lim_{n \rightarrow \infty} \frac{1-0}{n} \sum_{k = 0}^{n-1} 2^{0 + (k/n)(1-0)} \\
+        =&  \int_0^1 2^{x} dx = \frac{2^x}{\ln 2} \Big | _0^1 = \frac{1}{\ln 2}
+    \end{align*}
+\end{numedquestion}
+% Wikipedia -- mean value theorem for definite integrals.
+\newpage
+\begin{numedquestion}
+    For the function $f$, there must exist two number $m$ and $M$ such that $m \leq f(x) \leq M$. We have:
+    \[m\int^b_a g(x) dx \leq \int_{a}^{b} f(x) g(x) d x \leq M\int^b_a g(x) dx \]
+    Let $\int^b_a g(x) dx = H$, since g is non-negative, we have:
+    \[m \leq \frac{1}{H} \int_a^b f(x) g(x) \leq M. \]
+    By the intermediate value theorem, function $f$ reaches all value on the interval $[m, M]$, so there exists a $\xi$ on $(a,b)$ that:
+    \[\frac{1}{H} \int_a^b f(x) g(x) = f(\xi). \]
+    Which means:
+    \[\int_{a}^{b} f(x) g(x) d x=f(\xi) \int_{a}^{b} g(x) d x\]
+
+\end{numedquestion}
+
+\end{document}

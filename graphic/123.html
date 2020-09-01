@@ -1,0 +1,10 @@
+<div class="main"><pre><code><div id="readfile"></div></code></pre></div> 
+<iframe id="myIframe" src="p1.txt" ></iframe><br>
+<div class="main"><pre><code><div id="cod"></div></code></pre></div> 
+
+<script type="text/javascript">
+var y = document.getElementById('myIframe');
+var x = y.contentDocument;
+document.getElementById("readfile").innerText = x.body;
+
+</script>

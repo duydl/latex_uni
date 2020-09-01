@@ -1,0 +1,120 @@
+% DO LE DUY
+% 1026-32-2038
+% July 14 2020
+
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{amsmath, amsthm} 
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1cm,bottom=2cm,includeheadfoot}
+\title{Practice of Basic Informatics - Homework 9}
+\author{by Do Le Duy}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Problem}
+Three equations:
+\begin{align*}
+    &\text{Sum}=\sum_{i=1}^{5} x_{i} \\
+    &\text { Arithmetic Mean }=\frac{1}{5} \sum_{i=1}^{n} x_{i} \\
+    &\text { Geometric Mean }=\sqrt[5]{x_{1} \times x_{2} \times x_{3} \times x_{4} \times x_{5}}   
+\end{align*}
+FORTRAN Program to solve the problem:
+\begin{verbatim} 
+    program calculate_three_values
+
+    implicit none
+    REAL               :: thesum = 0, themultiple = 1, a
+    INTEGER            :: i, n
+    write(*,*) 'Please, input the number of sample n'
+    read(*,*) n 
+
+    if(n < 2 .or. n > 50) then
+        write(*,*) 'Sample data must be between 2 and 50'
+        stop
+    end if
+
+    do i = 1, n
+        write(*,*) 'Please, input the sample', i
+        read(*,*) a
+        thesum = thesum + a 
+        themultiple = themultiple * a
+    end do
+
+    write(*,*) 'Sum: ', thesum
+    write(*,*) 'Arithmetic Mean: ', thesum/dble(n)
+    write(*,*) 'Geometric Mean: ', themultiple**(1/dble(n))
+    end program calculate_three_values
+\end{verbatim} 
+
+\section{Answers by the program}
+\subsection{Set 1}
+This is the programming running for Set 1:
+
+\begin{verbatim}
+Please, input the number of sample n
+4
+ Please, input the sample           1
+1
+ Please, input the sample           2
+5
+ Please, input the sample           3
+10
+ Please, input the sample           4
+11
+ Sum:    27.0000000    
+ Arithmetic Mean:    6.7500000000000000     
+ Geometric Mean:    4.8427346405845064     
+    
+\end{verbatim}
+
+\subsection{Set 2}
+This is the programming running for Set 1:
+
+\begin{verbatim}
+    Please, input the number of sample n
+    9
+     Please, input the sample           1
+    57.9
+     Please, input the sample           2
+    655.7
+     Please, input the sample           3
+    44.3
+     Please, input the sample           4
+    1000.5
+     Please, input the sample           5
+    3.5
+     Please, input the sample           6
+    6.4
+     Please, input the sample           7
+    5.3
+     Please, input the sample           8
+    78.6
+     Please, input the sample           9
+    12.5
+     Sum:    1864.70007    
+     Arithmetic Mean:    207.18889702690973     
+     Geometric Mean:    38.734296233169147                    
+\end{verbatim}  
+
+\subsection{Error Message}
+This is the programming running for Error Message:
+
+\begin{verbatim}
+    Please, input the number of sample n
+    1
+    Sample data must be between 2 and 50           
+\end{verbatim} 
+
+\section{FORTRAN programming}
+\subsection{What I have learned today}
+\begin{itemize}
+    \item Using loop and conditional in FORTRAN.
+\end{itemize}
+\subsection{Difficult points}
+\begin{itemize}
+    \item I am trying to figure out how to write without space. 
+\end{itemize}
+\end{document}

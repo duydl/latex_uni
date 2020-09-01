@@ -1,0 +1,83 @@
+\input{_header2 - mathcharter}
+\newcommand{\myclass}{Advanced Linear Algebra}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 01}
+\newcommand{\mystudentid}{1026-32-2038}
+
+
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \textbf{\myclass{} - \myhwtype{} }}\\
+  \vspace{0.6em} {\myname{} (\small{ID: \mystudentid{}})} \\
+  \today
+\end{center}
+
+\noindent{\textbf{Q3-2.}} 
+\begin{enumerate}[label={(\arabic*)}]
+    \setcounter{enumi}{1}
+    \item \(A = \begin{bmatrix} 3 & 6 \\ 1 & 2 \end{bmatrix} \)
+    \begin{itemize}
+        \item For \textbf{Ax=b} to be solvable, \textbf{b} must be in the column space \(C(A)\) of A. It is easy to see that A has the two column vectors \(C_2\) = \(2C_1\). Therefore, \(C(A)\) is a line in \(\R^2\) that passes through \((1,2)\), and for \textbf{Ax=b} to be solvable \textbf{b} must be on that line.     
+        \item The nullspace \(N(A)\) of A has the dimension 1 \((=n-r)\). To solve for 
+        \[\begin{bmatrix} 3 & 6 \\ 1 & 2 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\]
+        we will use elimination on the augmented matrix  \([\hspace{0.5em} A \hspace{0.5em} |\hspace{0.5em} 0 \hspace{0.5em}]\)  to have:
+        \[\left(\begin{array}{cc|c}  3 & 6 & 0\\ 1 & 2 & 0  \end{array}\right) \Longrightarrow \left(\begin{array}{cc|c}  1 & 2 & 0 \\ 0 & 0 & 0 \end{array}\right) \]
+        Let \(C_2\) be the free column and \(x_2\) be the free variable: \[\textbf{x} = \begin{bmatrix} -2x_2 \\ x_2 \end{bmatrix} = \begin{bmatrix} -2 \\ 1\end{bmatrix}x_2 \]
+        The nullspace is a line in \(\R^2\) that passes through \((-2, 1)\). The nullspace \(N(A)\) is orthogonal to the row space \(C^T(A)\). 
+    \end{itemize}
+    
+    
+    
+    \item  \(A = \begin{bmatrix} 3 & 6 & 3 & 6 \\ 1 & 2 & 1 & 2 \end{bmatrix}\) 
+    \begin{itemize}
+        \item The columns of A in (3) are the same as in (2), thus the condition for \textbf{Ax=b} to be solvable is also the same as (2).
+        \item The nullspace \(N(A)\) of A has the dimension 3 \((=n-r)\). To solve for 
+        \[\begin{bmatrix} 3 & 6 & 3 & 6 \\ 1 & 2 & 1 & 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\]
+        we will use elimination on the augmented matrix  \([\hspace{0.5em} A \hspace{0.5em} |\hspace{0.5em} 0 \hspace{0.5em}]\)  to have:
+        \[\left(\begin{array}{cccc|c}  3 & 6 & 3 & 6 & 0 \\ 1 & 2 & 1 & 2 & 0 \end{array}\right) \Longrightarrow \left(\begin{array}{cccc|c}  1 & 2 & 1 & 2 & 0 \\ 0 & 0 & 0 & 0 & 0\end{array}\right) \]
+        Let \(C_2\), \(C_3\), \(C_4\) be the free column and \(x_2\), \(x_3\), \(x_4\) be the free variable: \[\textbf{x} = \begin{bmatrix} -2x_2 - x_3 - 2x_4 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0\end{bmatrix}x_2 + \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0\end{bmatrix}x_3 + \begin{bmatrix} -2 \\ 0 \\ 0 \\ 1\end{bmatrix}x_4 \]
+        The nullspace is a hyper-plane with dim(3) in \(\R^4\) that is spanned by the above three vectors. The nullspace \(N(A)\) is orthogonal to the row space \(C^T(A)\). 
+    \end{itemize}
+    
+    
+    
+    \item  \(A = \begin{bmatrix} 2 & 4 & 2 \\ 0 & 4 & 4 \\ 0 & 8 & 8 \end{bmatrix}\)
+    \begin{itemize}
+        \item It is easy to realize that the three columns of A are independent: \(C_3 = C_2 - C_1\). So \(C(A)\) is a subspace of \(\R^3\) that is spanned by \(C_2\) and \(C_1\). For \textbf{Ax=b} to be solvable, \textbf{b} must be in the column space. 
+        \item The nullspace \(N(A)\) of A has the dimension 1 \((=n-r)\). To solve for 
+        \[\begin{bmatrix} 2 & 4 & 2 \\ 0 & 4 & 4 \\ 0 & 8 & 8 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}\]
+        we will use elimination on the augmented matrix  \([\hspace{0.5em} A \hspace{0.5em} |\hspace{0.5em} 0 \hspace{0.5em}]\)  to have:
+        \[\left(\begin{array}{ccc|c}  2 & 4 & 2 & 0 \\ 0 & 4 & 4 & 0 \\ 0 & 8 & 8 & 0 \end{array}\right) \Longrightarrow \left(\begin{array}{ccc|c}  2 & 4 & 2 & 0 \\ 0 & 4 & 4 & 0 \\ 0 & 0 & 0 & 0\end{array}\right) \]
+        Let \(C_3\) be the free column and \(x_3\) be the free variable: \[\textbf{x} = \begin{bmatrix} x_3 \\ -x_3 \\ x_3 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}x_3\]
+        The nullspace \(N(A)\) is a line in \(\R^3\) that is spanned by the above vector. 
+    \end{itemize}
+    
+\end{enumerate}
+
+\noindent{\textbf{Q3-3.}}
+\begin{itemize}
+    \item \(A = \begin{bmatrix} 1 & 2 \\ 3 & 8 \end{bmatrix}\) \newline
+    
+    Using elimination on A, we have 
+    \(\begin{bmatrix} 1 & 2 \\ 3 & 8 \end{bmatrix} \Longrightarrow \begin{bmatrix} 1 & 2 \\ 0 & 2 \end{bmatrix} \). So the rank of A is 2. The dimension of the nullspace N(A) is n - r = 0. We conclude that N(A) is the zero vector in \(\R^2\).
+    
+    
+    \item\(B = \begin{bmatrix} A \\ 2A \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ 3 & 8 \\ 2 & 4 \\ 6 & 16 \end{bmatrix}\) \newline
+    
+    The row space of B is spanned by the same vectors as A, so its dimension is still 2. As the row space of B still belongs to \(\R^2\), the dimension of its nullspace is the same as A being \(n - r = 0.\) We conclude that N(B) is the zero vector in \(\R^2\).
+    
+    
+    \item\(C = \begin{bmatrix} A & 2A \end{bmatrix} = \begin{bmatrix} 1 & 2 & 2 & 4 \\ 3 & 8 & 6 & 16 \end{bmatrix}\) \newline
+    
+    It is easy to see that the rank of C is 2 (same column space as A). But the row space of C is a subspace of \(\R^4\), so the dimension of its nullspace is \(n - r = 2\). To solve for 
+        \[\begin{bmatrix} 1 & 2 & 2 & 4 \\ 3 & 8 & 6 & 16 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\]
+    we will use elimination on the augmented matrix  \([\hspace{0.5em} C \hspace{0.5em} |\hspace{0.5em} 0 \hspace{0.5em}]\)  to have:
+        \[\left(\begin{array}{cccc|c}  1 & 2 & 2 & 4 & 0 \\ 3 & 8 & 6 & 16 & 0  \end{array}\right) \Longrightarrow \left(\begin{array}{cccc|c}  1 & 2 & 2 & 4 & 0  \\ 0 & 2 & 0 & 4 & 0 \end{array}\right) \]
+        Let \(C_3\), \(C_4\) be the free column and \(x_3\), \(x_4\) be the free variable: \[\textbf{x} = \begin{bmatrix} -2x_3 \\ -2x_4 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} -2 \\ 0 \\ 1 \\ 0 \end{bmatrix}x_3 + \begin{bmatrix} 0 \\ -2 \\ 0 \\ 1 \end{bmatrix}x_4\]
+        The nullspace \(N(A)\) is a plane in \(\R^4\) that is spanned by the above vectors. 
+    
+\end{itemize}
+
+\end{document}

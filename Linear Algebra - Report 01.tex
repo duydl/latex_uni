@@ -1,0 +1,235 @@
+\input{_header2 - mathcharter}
+\newcommand{\myclass}{Linear Algebra with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 01}
+\newcommand{\writtensection}{}
+\newcommand{\mystudentid}{1026-32-2038}
+
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \textbf{\myclass{} - \myhwtype{} }}\\
+  \vspace{0.6em} {\myname{} (\small{ID: \mystudentid{}})} \\
+  \today
+\end{center}
+
+
+\textbf{Diagonalizing a 2x2 Matrix}
+\vspace{0.3em} \hrule \vspace{.1in}
+
+Diagonalize the matrix
+\[
+A=\begin{bmatrix}
+2 & 1 \\
+1 & 1
+\end{bmatrix}
+\]
+\begin{enumerate}
+    \item The characteristic polynomial of \(A\) is:\newline
+    \[p_{A}(x) = \operatorname{det}(A-x I) = 
+    \begin{vmatrix}
+2 - x & 1 \\
+1 & 1 - x   
+    \end{vmatrix} =x^2 - 3x +1 \]
+
+    \item Let \(\lambda_{1}<\lambda_{2}\) be the roots of \(P\). We have \newline
+    \[\lambda_{1} = \frac{3- \sqrt{5}}{2}\] and \[ \lambda_{2} = \frac{3+ \sqrt{5}}{2}\]
+
+
+    \item Now we find the eigenspaces \(E_1\) and \(E_2\) corresponding to the two eigenvalues \(\lambda_1\) and \(\lambda_2\) of A. \newline
+    \(E_1\) is the null space of the matrix 
+    \[ A - \lambda_{1} I = 
+    \begin{bmatrix}
+    \frac{1 + \sqrt{5}}{2} & 1 \\
+    1 & \frac{-1+ \sqrt{5}}{2}
+    \end{bmatrix}
+    \] 
+    and
+    \[\begin{bmatrix}
+    \frac{1 + \sqrt{5}}{2} & 1 \\
+    1 & \frac{-1+ \sqrt{5}}{2}
+    \end{bmatrix}
+    \begin{bmatrix}
+    x \\
+    y
+    \end{bmatrix} = 0
+    \] where \(\begin{bmatrix} x \\ y \end{bmatrix} \) is a vector in \(E_1\). We will use elimination to find the null space: 
+    \[ \begin{bmatrix}
+    \frac{1 + \sqrt{5}}{2} & 1 \\
+    1 & \frac{-1+ \sqrt{5}}{2}
+    \end{bmatrix} 
+    \rightarrow 
+    \begin{bmatrix}
+    \frac{1 + \sqrt{5}}{2} & 1 \\
+    0 & 0
+    \end{bmatrix}
+    \]
+    Thus, we have \[\frac{1 + \sqrt{5}}{2}x + y = 0 \iff y = \frac{2}{1 - \sqrt{5}}x \]
+    Therefore, 
+    \[E_1 = 
+    \begin{bmatrix}
+    1 \\
+    \frac{2}{1 - \sqrt{5}}
+    \end{bmatrix}x \]where x is an arbitrary constant. 
+    
+    \item Similarly, we find \(E_2\):
+    \[E_2 = 
+    \begin{bmatrix}
+    1 \\
+    \frac{2}{1 + \sqrt{5}}
+    \end{bmatrix}x \]
+    
+    \item To show \(E_1\) and \(E_2\) are orthogonal, we will show that their dot product is equal zero: \[ 
+    \begin{bmatrix}
+    1 \\
+    \frac{2}{1 - \sqrt{5}}
+    \end{bmatrix}^{T}
+    \begin{bmatrix}
+    1 \\
+    \frac{2}{1 + \sqrt{5}}  
+    \end{bmatrix} = 0
+    \]
+    
+    
+    \item Using elimination
+    \[[ \quad G \quad | \quad I \quad] \rightarrow [\quad I \quad | \quad G^{-1} \quad] \] we find the inverse of G:
+    \[G^{-1} =  \begin{bmatrix}
+-\frac{1}{2 \sqrt{5}} & \frac{1+\sqrt{5}}{4 \sqrt{5}}\\
+\frac{1}{2 \sqrt{5}} & -\frac{1-\sqrt{5}}{4 \sqrt{5}} 
+\end{bmatrix}\]
+    
+    
+    
+    \item We will check \(
+    AG=G
+    \begin{bmatrix}
+    \lambda_{1} & 0 \\
+    0 & \lambda_{2}
+    \end{bmatrix}\) with the following calculations: 
+    \[
+    \begin{bmatrix}
+    2 & 1  \\
+    1 & 1  
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 1 \\ 
+    \frac{2}{1 - \sqrt{5}} & \frac{2}{1 + \sqrt{5}}  
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    \frac{4- 2\sqrt{5}}{1 - \sqrt{5}} & \frac{4+ 2\sqrt{5}}{1 + \sqrt{5}}   \\
+    \frac{3- \sqrt{5}}{1 - \sqrt{5}} & \frac{3+ \sqrt{5}}{1 + \sqrt{5}}  
+    \end{bmatrix} = \begin{bmatrix}
+    \frac{3- \sqrt{5}}{2} & \frac{3+ \sqrt{5}}{2}   \\
+    \frac{3- \sqrt{5}}{1 - \sqrt{5}} & \frac{3+ \sqrt{5}}{1 + \sqrt{5}}  
+    \end{bmatrix}\]
+    \[
+    \begin{bmatrix}
+    1 & 1 \\ 
+    \frac{2}{1 - \sqrt{5}} & \frac{2}{1 + \sqrt{5}}  
+    \end{bmatrix} \begin{bmatrix}
+    \frac{3- \sqrt{5}}{2} & 0  \\
+    0 & \frac{3+ \sqrt{5}}{2}  
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    \frac{3- \sqrt{5}}{2} & \frac{3+ \sqrt{5}}{2}   \\
+    \frac{3- \sqrt{5}}{1 - \sqrt{5}} & \frac{3+ \sqrt{5}}{1 + \sqrt{5}}  
+    \end{bmatrix}\]
+    
+    
+    \item Because G is invertible, we have:
+    \[ (6):
+    AG=G
+    \begin{bmatrix}
+    \lambda_{1} & 0 \\
+    0 & \lambda_{2}
+    \end{bmatrix}  \iff
+    A=G
+    \begin{bmatrix}
+    \lambda_{1} & 0 \\
+    0 & \lambda_{2}
+    \end{bmatrix}
+    G^{-1} \]
+    
+    \item We will prove this using induction:
+    \begin{description}
+    \item[Induction Hypothesis:] \(P(k)\): For any \(k \in \mathbb{N}\), \(A^k = G
+    \begin{bmatrix}
+    \lambda_{1}^{k} & 0 \\
+    0 & \lambda_{2}^{k} \end{bmatrix} G^{-1}\). 
+    \item[Base Case:]
+      We have already shown \(P(1)\) is true.
+    \item[Induction Step:] Assume \(P(k-1)\) is true, we will show \(P(k)\) is also true. 
+      \[A^k = A^{k-1}A = G 
+    \begin{bmatrix}
+    \lambda_{1}^{k-1} & 0 \\
+    0 & \lambda_{2}^{k-1}
+    \end{bmatrix} G^{-1} G 
+    \begin{bmatrix}
+    \lambda_{1} & 0 \\
+    0 & \lambda_{2} \end{bmatrix} G^{-1}= G 
+    \begin{bmatrix}
+    \lambda_{1}^{k} & 0 \\
+    0 & \lambda_{2}^{k} \end{bmatrix} G^{-1}  \]
+  \end{description}
+    
+    
+     
+    \item We have: 
+    \[A^2 = 
+    \begin{bmatrix}
+    5 & 3 \\
+    3 & 2
+    \end{bmatrix}, \quad A^3 = 
+    \begin{bmatrix}
+   13 & 8 \\
+    8 & 5
+    \end{bmatrix}\] and 
+    \[G
+    \begin{bmatrix}
+    \lambda_{1} & 0 \\
+    0 & \lambda_{2}
+    \end{bmatrix}
+    G^{-1} = 
+    \begin{bmatrix}
+    1 & 1 \\ 
+    \frac{2}{1 - \sqrt{5}} & \frac{2}{1 + \sqrt{5}}  
+    \end{bmatrix} \begin{bmatrix}
+    \frac{3- \sqrt{5}}{2} & 0  \\
+    0 & \frac{3+ \sqrt{5}}{2}  
+    \end{bmatrix}
+    \begin{bmatrix}
+    -\frac{1}{2 \sqrt{5}} & \frac{1+\sqrt{5}}{4 \sqrt{5}}\\
+    \frac{1}{2 \sqrt{5}} & -\frac{1-\sqrt{5}}{4 \sqrt{5}} 
+    \end{bmatrix}\]
+    \[ G \begin{bmatrix}
+    \lambda_{1}^2 & 0 \\
+    0 & \lambda_{2}^2
+    \end{bmatrix}
+    G^{-1} = 
+    \begin{bmatrix}
+    5 & 3 \\
+    3 & 2
+    \end{bmatrix},
+    \quad  
+    G \begin{bmatrix}
+    \lambda_{1}^3 & 0 \\
+    0 & \lambda_{2}^3
+    \end{bmatrix}
+    G^{-1} =
+    \begin{bmatrix}
+   13 & 8 \\
+    8 & 5 
+    \end{bmatrix}
+     \]
+    
+    
+    
+    
+    
+    
+    
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,344 @@
+\documentclass{article} %
+\title{Chapter 7}
+\author{Taro Kyodai}
+\usepackage{} %
+
+% if you type a letter with  the shift key located  in the right hand side of your japanese keyboad, the keyboard setting will change in VDI
+% if the keyboad setting has chaned, pleae recover the keyboad setting with the button at the right upper corner of this VDI showing such as ja, en and so on.
+% this is a system probelem. thank you for your understanding.
+
+
+\begin{document}
+
+\maketitle
+
+\subsection*{7.2 Mathematical mode}
+
+% mathematical expression should enclosed with $
+
+%1st example
+Let $f$ be the function defined by $f(x) = 3x + 7$, and
+let $a$ be a positive real number.
+
+%2nd example
+Let $f$ be the function defined by
+$
+f(x) = 3x + 7
+$
+, and let $a$ be a positive real number.
+
+%3rd example
+Let
+$
+f
+$
+be the function defined by
+$
+f(x) = 3x + 7
+$
+, and let
+$
+a
+$
+be a positive real number.
+
+% you can use \begin{eqation} and \end{equation} to number equation.
+
+\begin{equation}
+  f(x) + g(x) = 4x +11
+\end{equation}
+
+\begin{equation}
+  f(x)g(x) = 3x^2 + 19x + 28
+\end{equation}
+
+% you can use \[ \] to not number equation.
+
+\[
+  f(x) + g(x) = 4x +11
+\]
+
+\[
+  f(x)g(x) = 3x^2 + 19x + 28
+\]
+
+% letters are set in italic
+% ' has a special extra meaning
+
+\subsection*{7.3 Characters in mathematical mode}
+
+$u' + v''$
+
+% the extra spaces will not affect on the final result of spacing
+
+$u         v + w =x$
+
+$uv+w=x$
+
+$uv + w = x$
+
+% when you write equations, it is better to give proper space to distinguish each letters 
+
+% the characters in mathematics mode should be typed with \
+
+\[
+\# \$ \% \& \_ \{ \} \backslash |
+\]
+
+\subsection*{7.4 Superscripts and subscripts}
+
+\[
+ds^2 = dx_1^2 + dx_2^2 + dx_3^2 - c^2 dt^2  
+\]
+
+
+\[
+ds^2 = dx^2_1 + dx^2_2 + dx^2_3 - c^2 dt^2  
+\]
+
+$x^17 -1$
+
+$x^{17}-1$
+
+%you will find out the necessity of curly brackets to use intended expression
+
+%$s^n^j$ %the folowing message is the error you will get with the left equation
+% latex can not tell which to apply in superscript: ambiguous
+%! Double superscript.$
+%l.69 $s^n^ %
+%          j$
+%? %
+% the following equations are included as a possible output
+          
+$s^{n j}$
+$s^{n^j}$
+
+\subsection*{7.5 Greek letters}
+
+% Greek letters are easy to type in math mode
+
+$\alpha,\beta,\gamma, \Gamma$
+%while stating mathematical mode,  just type the spell with backslash ahead
+
+$A = \pi r^2$
+
+% it is better to give a space between greel letter and the following equation to distingishu them
+
+\subsection*{7.6 Mathematical symbols}
+
+$a_1+a_2+a_3+\cdots$ % \cdots is necessary to express series expression 
+$a_1+a_2+a_3+\ldots$ % wrong use of \ldots
+
+
+\subsection*{7.7 Standard fucnctions}
+
+\[
+\cos(\theta+\phi)=\cos \theta \cos \phi - \sin \theta \sin \phi
+\]
+
+\[
+cos(\theta+\phi)=cos \theta cos \phi - sin \theta sin \phi
+\]
+
+% without backslash, the letter gets italic
+% in correct expression of cos, sin, tan, we will use non-italic ones
+
+
+\subsection*{7.8 Fractions and roots}
+
+$\frac{numerator}{denominator}$
+
+% you need to use it with mathematical mode, of course.
+
+The function $f$ is given by
+\[
+f(x) = 2x + \frac{x-7}{x^2 + 4}
+\]
+for all real numbers $x$.
+
+% to express square roots, \sqrt{expression}
+
+The roots of a quadratic polynomial $a x^2 + bx + c$ with
+$a \neq 0$ are given by the formula
+\[
+\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+
+% to express an nth root, \sqrt[n]{expression}
+
+The roots of a cubic polynomial of the form $x^3 - 3px -2q$
+are given by the formula
+\[
+\sqrt[3]{q + \sqrt{q^2 - p^3}} + \sqrt[3]{q - \sqrt{q^2 - p^3}}
+\]
+where the values of the two cube roots must are chosen
+so as to ensure that their product is equal to $p$.
+
+\subsection*{7.9 Ellipsis}
+
+Elipsis is produced mathematic mode using the control sequences with ldots and cdots. Carefully check the appeared potisions.
+
+% use dots expression properly with the following example,
+
+\[
+f(x_1, x_2, \ldots, x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 
+\]
+
+% cdots for omitting series
+
+\subsection*{7.10 Brackets and norms}
+
+The frequently used brackets are shown.\\
+
+Let $X$ be a Banach space and let $f \colon B \ to \textbf{R}$
+be a bounded linear functional on $x$. The \textit{norm} of
+$f$, denoted by $\|f\|$, is defined by
+\[
+\|f\| = \inf \{K \in [0, +\infty) :
+|f(x)| \leq K \|x\| \mbox{ for all } x \in X \}
+\]
+
+% for sinlge |, just type | without backslash. See 7.6
+% pay attention to each bracket relationship
+
+% for larger delimiters, we need to state special parenthesis with
+% \left( expression \right): this function automatically search
+% sufficient size of parehthesis
+
+\[
+f(x,y,z) = 3y^2 z \left( 3 + \frac{7x+5}{1+y^2} \right)
+\]
+
+
+
+% nesting pairs of delimiters
+
+\[
+\left| 4 x^3 + \left( x + \frac{42}{1+x^4} \right) \right|
+\]
+
+% with \left. and \right., we can obtain null delimiters
+% null means ``nothing to output'' in programming
+
+\[
+{\left. \frac{du}{dx} \right| }_{x=0}
+\]
+
+\subsection*{7.11 Matrices and other arrays in LaTeX}
+
+The \emph{charcteric polynomial} $\chi(\lambda)$ of the
+$3 \times 3$~matrix % ~ to give a space
+\[
+\left( \begin{array}{ccc}
+  a & b & c \\
+  d & e & f \\
+  g & h & i \end{array} \right)
+\]
+is given by the formula
+\[
+\chi(\lambda) = \left| \begin{array}{ccc}
+  \lambda - a & -b & -c \\
+  -d & \lambda - e & -f \\
+  -g & -h & \lambda - i \end{array} \right|
+\]
+
+% 1: to make larger parethesis, \left( ... \right) is used
+% 2: input the contents of matrix with & and \\
+% 3: {ccc} means the typesetting in matrix
+% for example, you can control typesetting like this;
+
+\[
+\begin{array}{lcr}
+    \mbox{First number} & x & 8 \\
+    \mbox{Second number} & y & 15 \\
+    \mbox{Sum} & x + y & 23 \\
+    \mbox{Difference} & x - y & -7 \\
+    \mbox{Product} & xy & 120 \end{array}
+\]
+
+% just note: without \mbox{} you will get a italice letters in the table
+% because the following table is availabel in mathematical mode
+
+\[
+\begin{array}{lcr}
+    First number & x & 8 \\
+    Second number & y & 15 \\
+    Sum & x + y & 23 \\
+    Difference & x - y & -7 \\
+    Product & xy & 120 \end{array}
+\]
+
+\subsection*{7.12 Derivatives, limits, sums and integrals}
+
+% for total differential, you can write with the learned things so far
+
+\[
+\frac{du}{dt}~and~\frac{d^2 u}{dx^2}
+\]
+
+% for partial differential, we will use \partial
+% with the example of the Heat Equation
+
+\[
+\frac{\partial u}{\partial t}
+= \frac{\partial^2 u}{\partial x^2}
++ \frac{\partial^2 u}{\partial y^2}
++ \frac{\partial^2 u}{\partial z^2}
+\]
+
+% to obtain mathematical expressions such as: lim, inf, sup
+
+\[
+\lim_{x \to + \infty}, \inf_{x>s} \mbox{and} \sup_K
+\]
+
+% example of combination;
+
+\[
+\lim_{x \to 0} \frac{3x^2 + 7x^3}{x^2 + 5x^4}=3
+\]
+
+% example os summation
+% to express sum, we will use superscript and subscript function
+
+\[
+\sum_{i=1}^{2n}
+\]
+
+% in the textbook, the backslash ahead of sum is lack, sorry for that.
+
+\[
+\sum_{k=1}^n k^2 = \frac{1}{2} n (n+1)
+\]
+
+% finally, integrals in mathematical mode
+
+\[
+\int_a^b f(x)\,dx
+\]
+
+\[
+\int_a^b f(x)dx % to give a correct appearance, we will use \, beofre the d
+\]
+
+
+% to express integrals, we will use superscript and subscript function, too
+
+\[
+\int_0^{+\infty} x^n e^{-x} \,dx = n!
+\]
+\[
+\int \cos \theta \,d\theta = \sin \theta
+\]
+\[
+\int_{x^2 + y^2 \leq R^2} f(x,y) \,dx\,dy
+= \int_{\theta=0}^{2\pi} \int_{r=0}^R
+f(r\cos\theta,r\sin\theta) r\,dr\,d\theta
+\]
+
+%Otsukare-sama deshita!
+
+% for today's homework, you can copay & paste the texts in the tex file.
+% We will check your typesetting skill and understanding of the mathematical mode
+
+\end{document}

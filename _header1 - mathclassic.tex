@@ -1,0 +1,47 @@
+\documentclass[11pt]{exam}
+\usepackage{amsmath, amsthm, amssymb}  
+% https://tex.stackexchange.com/questions/32100/what-does-each-ams-package-do
+\usepackage{enumitem}
+
+% Theorems
+\theoremstyle{definition}
+\newtheorem*{defi}{Definition}
+\newtheorem*{thm}{Theorem}
+
+% Special sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\H}{\mathbb{H}}
+
+\pagenumbering{gobble}
+\newcounter{questionCounter}
+\newenvironment{numedquestion}[0]{%
+	\stepcounter{questionCounter}%
+    \vspace{.2in}%
+        \ifx\writtensection\undefined
+        \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+        \else
+          \if\writtensection
+          \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+          \else
+          \noindent{\bf \questiontype \; \writtensection.\arabic{questionCounter} }%
+        \fi
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\headrule
+\header{{\myname}}%
+{\emph{\myclass}}%
+{\textbf{\myhwtype }}
+
+\footer{}{\thepage}{}
+
+
+

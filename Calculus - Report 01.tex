@@ -1,0 +1,127 @@
+\input{_header1 - mathclassic}
+\newcommand{\myclass}{Calculus with Exercises A}
+\newcommand{\myname}{DO LE DUY}
+\newcommand{\myhwtype}{Report 01}
+\newcommand{\mystudentid}{}
+% Prefix for numedquestion's
+\newcommand{\questiontype}{Problem}
+\newcommand{\writtensection}{1}
+
+
+\newenvironment{alphaparts}[0]{%
+  \begin{enumerate}[label=\textbf{(\alph*)}]
+}{\end{enumerate}}
+
+\newenvironment{arabicparts}[0]{%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]
+}{\end{enumerate}}
+
+\newenvironment{questionpart}[0]{%
+  \item
+}{}
+
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \textbf{\myclass{} — \myhwtype{} }}\\
+  \vspace{0.6em} {\myname{} (\small{ID: \mystudentid{}})}\\
+  \today
+\end{center}
+
+
+% Problem 1
+\begin{numedquestion}
+ \begin{itemize}
+  \item Let y be any solution of the equation a + x = b. Then,
+    \begin{align*}
+    a + y & = b \\ 
+    -a + a + y     & = -a + b   \quad \hspace{0.75em} \text{by (A4): Existence of negative}\\
+    (-a + a) + y     & = -a + b \quad \hspace{0.75em} \text{by (A2): Associative law}\\
+    0 + y     & = b + (-a)      \quad \text{by (A1): Commutative law}\\
+    y &= b +  (-a)              \quad \text{by (A3): Existence of 0}
+    \end{align*} 
+  \item Because the applications of axioms here go both ways, in this proof of \textbf{Uniqueness}, we have proved that \(a + x = b \iff x = b +  (-a)\). As the proof of \textbf{Existence} is equivalent to the proof of (\(x = b +  (-a) \Rightarrow a + x = b\)), we have demonstrated both the \textbf{Uniqueness} and \textbf{Existence} characteristic of the solution to the equation a + x = b. 
+ \end{itemize}
+\end{numedquestion}
+
+
+
+
+% Problem 2
+\begin{numedquestion}
+\begin{itemize}
+  \item The following definition will be used.     
+    \begin{description} 
+    \item[Bounded Set:]
+      Let \(E\) be a set of real numbers. A number \(M\) is said to be an upper bound for \(E\) if \(x \leq M\) for all \(x \in E .\) A number \(m\) is said to be an lower bound for \(E\) if \(m \leq x\) for all \(x \in E\) . A set that has an upper bound and a lower bound is called bounded.
+    \end{description}
+  \item  Prove: \(\exists r > 0: |x| < r \hspace{0.5em} \forall x \in E  \Rightarrow \textbf{E is bounded}.\) (1)
+        \begin{align*}
+            & \exists r > 0: |x| < r \hspace{0.5em} \forall x \in E\\ 
+            & \Rightarrow \exists r > 0: -r < x < r \hspace{0.5em} \forall x \in E\\
+            & \Rightarrow \text{-r and r are a lower bound and a upper bound of E} \\
+            & \Rightarrow \textbf{E is bounded}
+        \end{align*}
+  
+  \item  Prove: \(\textbf{E is bounded} \Rightarrow \exists r > 0: |x| < r \hspace{0.5em} \forall x \in E.\) (2) \newline \newline
+         \( \textbf{E is bounded} \Rightarrow \exists a, b: a < x < b \hspace{0.5em} \forall x \in E\). We will now prove (2) with case analysis:
+         \begin{itemize}
+             \item If \(a < -b \Rightarrow a < x < -a \hspace{0.5em} \forall x \in E \Rightarrow \exists r = |a|: |x| < r \hspace{0.5em} \forall x \in E.\)
+             \item If \(a > -b \Rightarrow -b < x < b \hspace{0.5em} \forall x \in E \Rightarrow \exists r = |b|: |x| < r \hspace{0.5em} \forall x \in E.\)
+             \item If \(a = -b \Rightarrow \exists r = |b| = |a|: |x| < r \hspace{0.5em} \forall x \in E.\)
+         \end{itemize}
+         
+        
+  \item (1) and (2): \(\textbf{E is bounded} \iff \exists r > 0: |x| < r \hspace{0.5em} \forall x \in E.   \). 
+\end{itemize}
+\end{numedquestion}
+
+
+% Problem 3 \(E \in \mathbb{R}, \hspace{0.5em} m = \sup E \iff m > x \hspace{0.5em} \forall x \in E \hspace{0.5em} \& \hspace{0.5em} m \leq M \hspace{0.5em} \forall\)  \(M\) is an upper bound of E
+\begin{numedquestion}
+The following definition will be used.    
+        \begin{description} 
+    \item[Supremum and Infimum:]
+Let E be a nonempty set of real numbers that is bounded
+above. If M is the least of all the upper bounds, then M is said to be the least upper bound of E or the supremum of E, denoted by M = sup E. Similarly, let E be a nonempty set of real numbers that is bounded below. If m is the greatest of all the lower bounds, then m is said to be the greatest lower bound of E or the infimum of E, denoted by m = inf E.
+    \end{description}
+  \begin{arabicparts}
+    \item \textbf{Collocation of Supremum:} Let \(A\) be a set of real numbers. Show that a real number \(x\) is the supremum of \(A\) if and only if \(a \leq x\) for all \(a \in A\) and for every positive number \(\varepsilon\) there is an element \(a^{\prime} \in A\) such that \(x-\varepsilon<a^{\prime}\). \newline
+    \textbf{Proof:}
+    \begin{itemize}
+        \item Prove the forward of the collocation using contradiction: \newline 
+        - Assume that x is the least upper bound of A. If exists a positive \(\epsilon\) such that \( x - \epsilon > a'\) for all \(a' \in A\), (\(x - \epsilon\)) will also be an upper bound of A and (\(x - \epsilon) < x\). This contradicts with our assumption that x is the least upper bound. \newline
+        \item Prove the backward of the collocation using contradiction: \newline 
+        - Assume that x is an upper bound of A and for every positive number \(\varepsilon\) there is an element \(a^{\prime} \in A\) such that \(x-\varepsilon<a^{\prime}\). If \(x' \neq x\) is the least upper bound then \(x'< x\) and there exists positive \(\varepsilon < (x - x')\) such that \(x-\varepsilon>a^{\prime}\) for all \(a^{\prime} \in A\). This contradicts with our assumption that for every positive number \(\varepsilon\) there is an element \(a^{\prime} \in A\) such that \(x-\varepsilon<a^{\prime}\). 
+    \end{itemize} 
+    \item \textbf{Collocation of Infimum:} Let \(A\) be a set of real numbers. Show that a real number \(x\) is the infimum of \(A\) if and only if \(a \geq x\) for all \(a \in A\) and for every positive number \(\varepsilon\) there is an element \(a^{\prime} \in A\) such that \(x+\varepsilon>a^{\prime}\)
+  \end{arabicparts}
+   
+  
+\end{numedquestion}
+
+% Problem 4
+\begin{numedquestion}
+  \begin{arabicparts}
+    \item \(E=\{\sqrt[n]{n}: n \in \mathbb{N}\} \) \newline
+    The least upper bound is \(\sqrt[3]{3}\) as it satisfies two conditions in the collocation about supremum of a set (Problem 1.3): 
+    \begin{itemize}
+        \item \(e \leq \sqrt[3]{3}\) for all \(e \in E\)
+        \item for any \(\varepsilon>0\) there exists \(e' = \sqrt[3]{3} \in E\) such that \(e'>\sqrt[3]{3}-\varepsilon\) 
+    \end{itemize}
+     Similarly, the greatest lower bound is 1. The maximum is \(\sqrt[3]{3}\) and minimum is \(1\).
+    \item \(E=\{p \in \mathbb{Q}: p^{2} \leq 7\}\) \newline
+    The least upper bound is \(\sqrt{7}\) as it satisfies two conditions of the collocation of the supremum of a set \(E\) (Problem 1.3): 
+    \begin{itemize}
+        \item \(e \leq \sqrt{7}\) for all \(e \in E\)
+        \item for any \(\varepsilon>0\) there exists \(e' \in E\) such that \(e'>\sqrt{7}-\varepsilon\) 
+    \end{itemize}
+     Similarly, the greatest lower bound is \(-\sqrt{7}\). The maximum is \(\sqrt{7}\) and minimum is \(-\sqrt{7}\).
+    
+    \item \(E= \{n^{(-1)^{n}}: n \in \mathbb{N}\}\)\newline
+    The set is unbounded above so sup \(E=\infty\) and bounded below with inf \(E = 0\). There is no maximum and minimum. 
+  \end{arabicparts}
+\end{numedquestion}
+    
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amsthm}  
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows}
+\title{Homework 5: Getting Started with LaTeX}
+\author{DO LE DUY}
+\date{\today}
+\begin{document}
+\twocolumn
+\maketitle
+\section{Introduction} %This is the start of the first section
+\subsection{What’s going on here?} %This is the start of the 1.1 subsection
+LaTeX is a typesetting language. Instead of visually formatting your text, you enter your manuscript text intertwined with LaTeX commands in a plain text file. You then run LaTeX to produce formatted output, such as a PDF file. Thus, in contrast to standard word processors, your document is a separate file that does not pretend to be a representation of the final typeset output, and so can be easily edited and manipulated.
+\subsection{Operative Systems} %This is the start of the 1.2 subsection
+LaTeX is available for most computers, from the PC and Mac to large UNIX and VMS systems. On many university computer clusters you will find that a LaTeX installation is available, ready to use. Information on how to access the local LaTeX installation should be provided in the Local Guide. If you have problems getting started, ask the instructor.
+
+
+\section{Learning to work with LaTeX} %This is the start of the second section
+\subsection{What I have learned today} %This is the start of the 2.1 section
+I learned how to compile tex file on Linux system. Normally I would use Overleaf website or an extension on Visual Studio Code on Window to compile my tex file. 
+\subsection{Difficult Points} %This is the start of the 2.2 section
+I met no particular difficult points the lectures as I already had some experience with Latex. 
+\onecolumn
+\section{Testing} %This is the start of the third section
+\subsection{My Favorite Equations} %This is the start of the 3.1 section
+\begin{align*}
+    \textbf{Gauss's law} \oiint_{\partial \Omega} \mathbf{E} \cdot \mathrm{d} \mathbf{S}&=\frac{1}{\varepsilon_{0}} \iiint_{\Omega} \rho \mathrm{d} V \\
+    \textbf{Gauss's law for magnetism}\oiint_{\partial \Omega} \mathbf{B}  \cdot \mathrm{d} \mathbf{S}&=0 \\
+    \textbf{Maxwell–Faraday equation} \oint_{\partial \Sigma} \mathbf{E} \cdot \mathrm{d} \boldsymbol{l}&=-\frac{\mathrm{d}}{\mathrm{d} t} \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d} \mathbf{S} \\
+    \textbf{Ampère's circuital law} \oint_{\partial \Sigma} \mathbf{B} \cdot \mathrm{d} \boldsymbol{l}&=\mu_{0}\left(\iint_{\Sigma} \mathbf{J} \cdot \mathrm{d} \mathbf{S}+\varepsilon_{0} \frac{\mathrm{d}}{\mathrm{d} t} \iint_{\Sigma} \mathbf{E} \cdot \mathrm{d} \mathbf{S}\right)
+\end{align*}
+\subsection{Try Drawing with Tikz} %This is the start of the 3.2 section
+\begin{center}
+    \begin{circuitikz}[american, scale = 1.25][american voltages]
+        \draw (0,0)
+          to[sV = $v_{in}$] (0, 2) % The voltage source
+          to[R, v^<=$v_R$] (3,2) % The resistor
+          to[C, v^<=$v_C$] (3,0) % Capacitor
+          to[L, v^<=$v_L$] (0,0); % Inductor
+          \draw[thin, ->, >=triangle 45] (1.5,1)node{$i$}  ++(-60:0.5) arc (-60:220:0.5);   
+          \end{circuitikz}
+\end{center}
+\end{document}

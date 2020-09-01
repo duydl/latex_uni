@@ -1,0 +1,71 @@
+% DO LE DUY
+% 1026-32-2038
+% July 14 2020
+
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{amsmath, amsthm} 
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1cm,bottom=2cm,includeheadfoot}
+\title{Practice of Basic Informatics - Homework 9}
+\author{by Do Le Duy}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Problem}
+Three equations:
+\begin{align*}
+    &\text{Sum}=\sum_{i=1}^{5} x_{i} \\
+    &\text { Arithmetic Mean }=\frac{1}{5} \sum_{i=1}^{n} x_{i} \\
+    &\text { Geometric Mean }=\sqrt[5]{x_{1} \times x_{2} \times x_{3} \times x_{4} \times x_{5}}   
+\end{align*}
+FORTRAN Program to solve the problem:
+\begin{verbatim} 
+    program calculate_three_values
+    write(*,*) 'Please, input a value for a1'
+    read(*,*) a1 
+    write(*,*) 'Please, input a value for a2'
+    read(*,*) a2
+    write(*,*) 'Please, input a value for a3'
+    read(*,*) a3
+    write(*,*) 'Please, input a value for a4'
+    read(*,*) a4
+    write(*,*) 'Please, input a value for a5'
+    read(*,*) a5
+    write(*,*) 'Sum: ', (a1+ a2 + a3 + a4 + a5)
+    write(*,*) 'Arithmetic Mean: ', (a1+ a2 + a3 + a4 + a5)/5.0
+    write(*,*) 'Geometric Mean: ', (a1 * a2 * a3 * a4 * a5)**(1.0/5.0)
+    end program calculate_three_values
+\end{verbatim} 
+
+\section{Answers by the program}
+\subsection{Answers by the today’s calculation}
+This is the programming running:
+\begin{verbatim}
+    Please, input a value for a1
+    1.5
+     Please, input a value for a2
+    2.3
+     Please, input a value for a3
+    3.2
+     Please, input a value for a4
+    1.2
+     Please, input a value for a5
+    3.2
+     Sum:    11.3999996    
+     Arithmetic Mean:    2.27999997    
+     Geometric Mean:    2.11572909               
+\end{verbatim}  
+\subsection{What I have learned today}
+\begin{itemize}
+    \item FORTRAN is a fast compiled language that has deep root in scientific computing community.
+    \item Using IO of FORTRAN
+\end{itemize}
+\subsection{Difficult points}
+\begin{itemize}
+    \item As FORTRAN is strong typing, it would require more work than popular weak typing language. On the other hand, it is much faster.
+    \item It is hard to interpret a certain output sometimes. For example, why the above sum had output 11.3999996. 
+\end{itemize}
+\end{document}
